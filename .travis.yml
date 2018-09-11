@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "stable"
+cache:
+  directories:
+    - node_modules
+before_install: docker-compose build
+script:
+  - docker-compose run web npm test
+  - docker-compose run web npm run build
+deploy:
+  provider: surge
+  skip_cleanup: true
+  domain: gamesBI.surge.sh
+  project: ./build/
+on:
+  branch: master
