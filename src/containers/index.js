@@ -1,3 +1,5 @@
-import DefaultLayout from './DefaultLayout';
+// import DefaultLayout from './DefaultLayout';
+import HomeLayout from './HomeLayout'
 
-export { DefaultLayout };
+// export { DefaultLayout };
+export { HomeLayout };
