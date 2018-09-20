@@ -480,6 +480,63 @@ class Dashboard extends Component {
 
     return (
       <div className="animated fadeIn">
+      <Row>
+        <Col>
+          <Card>
+            <CardBody>
+              <Row>
+                <Col sm="5">
+                  <CardTitle className="mb-0">coco</CardTitle>
+                  <div className="small text-muted">November 2015</div>
+                </Col>
+                <Col sm="7" className="d-none d-sm-inline-block">
+                  <Button color="primary" className="float-right"><i className="icon-cloud-download"></i></Button>
+                  <ButtonToolbar className="float-right" aria-label="Toolbar with button groups">
+                    <ButtonGroup className="mr-3" aria-label="First group">
+                      <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(1)} active={this.state.radioSelected === 1}>Day</Button>
+                      <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(2)} active={this.state.radioSelected === 2}>Month</Button>
+                      <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(3)} active={this.state.radioSelected === 3}>Year</Button>
+                    </ButtonGroup>
+                  </ButtonToolbar>
+                </Col>
+              </Row>
+              <div className="chart-wrapper" style={{ height: 300 + 'px', marginTop: 40 + 'px' }}>
+                <Line data={mainChart} options={mainChartOpts} height={300} />
+              </div>
+            </CardBody>
+            <CardFooter>
+              <Row className="text-center">
+                <Col sm={12} md className="mb-sm-2 mb-0">
+                  <div className="text-muted">Visits</div>
+                  <strong>29.703 Users (40%)</strong>
+                  <Progress className="progress-xs mt-2" color="success" value="40" />
+                </Col>
+                <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
+                  <div className="text-muted">Unique</div>
+                  <strong>24.093 Users (20%)</strong>
+                  <Progress className="progress-xs mt-2" color="info" value="20" />
+                </Col>
+                <Col sm={12} md className="mb-sm-2 mb-0">
+                  <div className="text-muted">Pageviews</div>
+                  <strong>78.706 Views (60%)</strong>
+                  <Progress className="progress-xs mt-2" color="warning" value="60" />
+                </Col>
+                <Col sm={12} md className="mb-sm-2 mb-0">
+                  <div className="text-muted">New Users</div>
+                  <strong>22.123 Users (80%)</strong>
+                  <Progress className="progress-xs mt-2" color="danger" value="80" />
+                </Col>
+                <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
+                  <div className="text-muted">Bounce Rate</div>
+                  <strong>Average Rate (40.15%)</strong>
+                  <Progress className="progress-xs mt-2" color="primary" value="40" />
+                </Col>
+              </Row>
+            </CardFooter>
+          </Card>
+        </Col>
+      </Row>
+
         <Row className="text-center">
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-gray-600">
@@ -493,8 +550,8 @@ class Dashboard extends Component {
                 <div className="text-personal"><strong>Principais fontes de dados</strong></div>
                 <div>
                 <p></p>
-                <p className="text-center" align="justify">Principais APIs de distribuição de dados de jogos,
-                 como por exemplo a API oficial da Twitch.</p>
+                <p className="text-center" align="justify">Principais APIs de distribuição<br/>de dados de jogos,
+                 como por<br/>exemplo a API oficial da<br/>Twitch.</p>
                  <br/>
 
 
@@ -516,8 +573,8 @@ class Dashboard extends Component {
                 <div className="text-personal"><strong>Análise visual</strong></div>
                 <div>
                 <p></p>
-                <p className="text-center" align="justify">Vários tipos de gráficos e ordeneções capazes
-                 de apresentar dados de maneira suscinta e objetiva.
+                <p className="text-center" align="justify">Vários tipos de gráficos e<br/>ordeneções capazes
+                 de<br/>apresentar dados de maneira<br/>suscinta e objetiva.
                  </p>
 
                  <br/>
@@ -528,17 +585,17 @@ class Dashboard extends Component {
 
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-gray-600">
-              <CardBody className="pb-0">
+              <CardBody className="pb-border">
                 <ButtonGroup className="float-center">
                 <Col xs="6" sm="4" md="3" lg="2">
                   <spam className="fa fa-pie-chart fa-5x mt-2"></spam></Col>
                 </ButtonGroup>
-                <div className="text-personal"><strong>Mesclagem de dados</strong></div>
+                <div className="text-personal"><strong>Mesclagem de<br/>dados</strong></div>
                 <div>
                 <p></p>
-                <p className="text-center" align="justify">Dados completos e confiáveis serão apresentados
-                 por conta da mesclagem de dados de várias fontes com vários tipos diferentes de informações
-                  importantes para o entendimento do mundo dos jogos.</p>
+                <p className="text-center" align="justify">Dados completos e confiáveis<br/>serão apresentados
+                 por conta<br/>da mesclagem de dados<br/>de várias fontes com vários<br/>tipos diferentes de<br/>informações
+                  importantes para<br/>o entendimento do mundo<br/>dos jogos.</p>
                  </div>
               </CardBody>
               </Card>
@@ -557,8 +614,8 @@ class Dashboard extends Component {
                 <div className="text-personal"><strong>Análise integrada</strong></div>
                 <div>
                 <p></p>
-                <p className="text-center" align="justify">Todo esse conjunto diferente de dados
-                integrados em apenas uma plataforma.</p>
+                <p className="text-center" align="justify">Todo esse conjunto diferente<br/>de dados
+                integrados em<br/>apenas uma plataforma.</p>
                 <br/>
                 <br/>
 
@@ -569,62 +626,6 @@ class Dashboard extends Component {
 
         </Row>
 
-        <Row>
-          <Col>
-            <Card>
-              <CardBody>
-                <Row>
-                  <Col sm="5">
-                    <CardTitle className="mb-0">coco</CardTitle>
-                    <div className="small text-muted">November 2015</div>
-                  </Col>
-                  <Col sm="7" className="d-none d-sm-inline-block">
-                    <Button color="primary" className="float-right"><i className="icon-cloud-download"></i></Button>
-                    <ButtonToolbar className="float-right" aria-label="Toolbar with button groups">
-                      <ButtonGroup className="mr-3" aria-label="First group">
-                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(1)} active={this.state.radioSelected === 1}>Day</Button>
-                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(2)} active={this.state.radioSelected === 2}>Month</Button>
-                        <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(3)} active={this.state.radioSelected === 3}>Year</Button>
-                      </ButtonGroup>
-                    </ButtonToolbar>
-                  </Col>
-                </Row>
-                <div className="chart-wrapper" style={{ height: 300 + 'px', marginTop: 40 + 'px' }}>
-                  <Line data={mainChart} options={mainChartOpts} height={300} />
-                </div>
-              </CardBody>
-              <CardFooter>
-                <Row className="text-center">
-                  <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">Visits</div>
-                    <strong>29.703 Users (40%)</strong>
-                    <Progress className="progress-xs mt-2" color="success" value="40" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
-                    <div className="text-muted">Unique</div>
-                    <strong>24.093 Users (20%)</strong>
-                    <Progress className="progress-xs mt-2" color="info" value="20" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">Pageviews</div>
-                    <strong>78.706 Views (60%)</strong>
-                    <Progress className="progress-xs mt-2" color="warning" value="60" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0">
-                    <div className="text-muted">New Users</div>
-                    <strong>22.123 Users (80%)</strong>
-                    <Progress className="progress-xs mt-2" color="danger" value="80" />
-                  </Col>
-                  <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
-                    <div className="text-muted">Bounce Rate</div>
-                    <strong>Average Rate (40.15%)</strong>
-                    <Progress className="progress-xs mt-2" color="primary" value="40" />
-                  </Col>
-                </Row>
-              </CardFooter>
-            </Card>
-          </Col>
-        </Row>
 
         <Row>
           <Col xs="6" sm="6" lg="3">
