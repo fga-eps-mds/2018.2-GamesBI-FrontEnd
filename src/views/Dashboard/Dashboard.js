@@ -480,116 +480,81 @@ class Dashboard extends Component {
 
     return (
       <div className="animated fadeIn">
-        <Row>
+        <Row className="text-center">
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-info">
+            <Card className="text-white bg-primary">
               <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
-                  <ButtonDropdown id='card1' isOpen={this.state.card1} toggle={() => { this.setState({ card1: !this.state.card1 }); }}>
-                    <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem disabled>Disabled action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                    </DropdownMenu>
-                  </ButtonDropdown>
+                <ButtonGroup className="float-center">
+                  <i className="icon-cloud-download"></i>
                 </ButtonGroup>
-                <div className="text-value">9.823</div>
-                <div>Members online</div>
+                <div className="text-personal"><strong>Principais fontes de dados</strong></div>
+                <div>
+                <p></p>
+                <p className="text-center" align="justify">Principais APIs de distribuição de dados de jogos,
+                 como por exemplo a API oficial da Twitch.</p>
+                 </div>
               </CardBody>
-              <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
-                <Line data={cardChartData2} options={cardChartOpts2} height={70} />
-              </div>
-            </Card>
+              </Card>
           </Col>
 
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-primary">
               <CardBody className="pb-0">
-<<<<<<< Updated upstream
-                <ButtonGroup className="float-right">
-                  <Dropdown id='card2' isOpen={this.state.card2} toggle={() => { this.setState({ card2: !this.state.card2 }); }}>
-                    <DropdownToggle className="p-0" color="transparent">
-                      <i className="icon-location-pin"></i>
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
-=======
                 <ButtonGroup className="float-center">
-                  < i className="icon-cloud-download"></i>
->>>>>>> Stashed changes
+                  <i className="icon-cloud-download"></i>
                 </ButtonGroup>
-                <div className="text-value">9.823</div>
-                <div>Members online</div>
+                <div className="text-personal"><strong>Análise visual</strong></div>
+                <div>
+                <p></p>
+                <p className="text-center" align="justify">Vários tipos de gráficos e ordeneções capazes
+                 de apresentar dados de maneira suscinta e objetiva.</p>
+                 </div>
               </CardBody>
-              <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
-                <Line data={cardChartData1} options={cardChartOpts1} height={70} />
-              </div>
-            </Card>
+              </Card>
           </Col>
 
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-warning">
+            <Card className="text-white bg-primary">
               <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
-                  <Dropdown id='card3' isOpen={this.state.card3} toggle={() => { this.setState({ card3: !this.state.card3 }); }}>
-                    <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                    </DropdownMenu>
-                  </Dropdown>
+                <ButtonGroup className="float-center">
+                  <i className="icon-cloud-download"></i>
                 </ButtonGroup>
-                <div className="text-value">9.823</div>
-                <div>Members online</div>
+                <div className="text-personal"><strong>Mesclagem de dados</strong></div>
+                <div>
+                <p></p>
+                <p className="text-center" align="justify">Dados completos e confiáveis serão apresentados
+                 por conta da mesclagem de dados de várias fontes com vários tipos diferentes de informações
+                  importantes para o entendimento do mundo dos jogos.</p>
+                 </div>
               </CardBody>
-              <div className="chart-wrapper" style={{ height: '70px' }}>
-                <Line data={cardChartData3} options={cardChartOpts3} height={70} />
-              </div>
-            </Card>
+              </Card>
           </Col>
 
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-danger">
+            <Card className="text-white bg-primary">
               <CardBody className="pb-0">
-                <ButtonGroup className="float-right">
-                  <ButtonDropdown id='card4' isOpen={this.state.card4} toggle={() => { this.setState({ card4: !this.state.card4 }); }}>
-                    <DropdownToggle caret className="p-0" color="transparent">
-                      <i className="icon-settings"></i>
-                    </DropdownToggle>
-                    <DropdownMenu right>
-                      <DropdownItem>Action</DropdownItem>
-                      <DropdownItem>Another action</DropdownItem>
-                      <DropdownItem>Something else here</DropdownItem>
-                    </DropdownMenu>
-                  </ButtonDropdown>
+                <ButtonGroup className="float-center">
+                  <i className="icon-cloud-download"></i>
                 </ButtonGroup>
-                <div className="text-value">9.823</div>
-                <div>Members online</div>
+                <div className="text-personal"><strong>Análise integrada</strong></div>
+                <div>
+                <p></p>
+                <p className="text-center" align="justify">Todo esse conjunto diferente de dados
+                integrados em apenas uma plataforma.</p>
+                 </div>
               </CardBody>
-              <div className="chart-wrapper mx-3" style={{ height: '70px' }}>
-                <Bar data={cardChartData4} options={cardChartOpts4} height={70} />
-              </div>
-            </Card>
+              </Card>
           </Col>
+
         </Row>
+
         <Row>
           <Col>
             <Card>
               <CardBody>
                 <Row>
                   <Col sm="5">
-                    <CardTitle className="mb-0">Traffic</CardTitle>
+                    <CardTitle className="mb-0">coco</CardTitle>
                     <div className="small text-muted">November 2015</div>
                   </Col>
                   <Col sm="7" className="d-none d-sm-inline-block">
