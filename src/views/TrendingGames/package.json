@@ -1,0 +1,6 @@
+{
+  "name": "TrendingGames",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./TrendingGames.js"
+}
