@@ -483,7 +483,8 @@ class Dashboard extends Component {
         <Row className="text-center">
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-gray-600">
-              <CardBody className="pb-0">
+              <CardBody className="pb-border_1">
+              <br/>
                 <ButtonGroup className="float-center">
                   <Col xs="6" sm="4" md="3" lg="2">
                     <spam className="fa fa-gamepad fa-5x mt-1"></spam>
@@ -494,6 +495,9 @@ class Dashboard extends Component {
                 <p></p>
                 <p className="text-center" align="justify">Principais APIs de distribuição de dados de jogos,
                  como por exemplo a API oficial da Twitch.</p>
+                 <br/>
+
+
                  </div>
               </CardBody>
               </Card>
@@ -501,17 +505,22 @@ class Dashboard extends Component {
 
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-gray-600">
-              <CardBody className="pb-0">
+              <CardBody className="pb-border">
+              <br/>
+              <br/>
                 <ButtonGroup className="float-center">
                 <Col xs="6" sm="4" md="3" lg="2">
-                  <spam className="fa fa-bar-chart fa-5x mt-2"></spam>
+                  <spam className="fa fa-bar-chart fa-5x mt-1"></spam>
                 </Col>
                 </ButtonGroup>
                 <div className="text-personal"><strong>Análise visual</strong></div>
                 <div>
                 <p></p>
                 <p className="text-center" align="justify">Vários tipos de gráficos e ordeneções capazes
-                 de apresentar dados de maneira suscinta e objetiva.</p>
+                 de apresentar dados de maneira suscinta e objetiva.
+                 </p>
+
+                 <br/>
                  </div>
               </CardBody>
               </Card>
@@ -537,10 +546,12 @@ class Dashboard extends Component {
 
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-gray-600">
-              <CardBody className="pb-0">
+              <CardBody className="pb-border">
+              <br/>
+              <br/>
                 <ButtonGroup className="float-center">
                 <Col xs="6" sm="4" md="3" lg="2">
-                  <span className="fa fa-archive fa-5x mt-2"></span>
+                  <span className="fa fa-archive fa-5x mt-1"></span>
                 </Col>
                 </ButtonGroup>
                 <div className="text-personal"><strong>Análise integrada</strong></div>
@@ -548,6 +559,9 @@ class Dashboard extends Component {
                 <p></p>
                 <p className="text-center" align="justify">Todo esse conjunto diferente de dados
                 integrados em apenas uma plataforma.</p>
+                <br/>
+                <br/>
+
                  </div>
               </CardBody>
               </Card>

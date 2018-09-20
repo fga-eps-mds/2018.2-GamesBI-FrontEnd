@@ -5256,6 +5256,12 @@ button.bg-dark:focus {
 .py-0 {
   padding-bottom: 0 !important; }
 
+.pb-border{
+  padding-bottom: 35px !important;}
+
+  .pb-border_1{
+    padding-bottom: 45px !important;}
+
 .pl-0,
 .px-0 {
   padding-left: 0 !important; }
@@ -9872,7 +9878,6 @@ body {
 html body .app.flex-row.align-items-center {
   height: 100vh; }
 
-.text-personal{
-  font-size: 1.2rem
-
-}
+  .text-personal{
+    font-size: 1.3rem;
+  }
