@@ -482,10 +482,12 @@ class Dashboard extends Component {
       <div className="animated fadeIn">
         <Row className="text-center">
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-primary">
+            <Card className="text-white bg-gray-600">
               <CardBody className="pb-0">
                 <ButtonGroup className="float-center">
-                  <i className="icon-cloud-download"></i>
+                  <Col xs="6" sm="4" md="3" lg="2">
+                    <spam className="fa fa-gamepad fa-5x mt-1"></spam>
+                  </Col>
                 </ButtonGroup>
                 <div className="text-personal"><strong>Principais fontes de dados</strong></div>
                 <div>
@@ -498,10 +500,12 @@ class Dashboard extends Component {
           </Col>
 
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-primary">
+            <Card className="text-white bg-gray-600">
               <CardBody className="pb-0">
                 <ButtonGroup className="float-center">
-                  <i className="icon-cloud-download"></i>
+                <Col xs="6" sm="4" md="3" lg="2">
+                  <spam className="fa fa-bar-chart fa-5x mt-2"></spam>
+                </Col>
                 </ButtonGroup>
                 <div className="text-personal"><strong>Análise visual</strong></div>
                 <div>
@@ -514,10 +518,11 @@ class Dashboard extends Component {
           </Col>
 
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-primary">
+            <Card className="text-white bg-gray-600">
               <CardBody className="pb-0">
                 <ButtonGroup className="float-center">
-                  <i className="icon-cloud-download"></i>
+                <Col xs="6" sm="4" md="3" lg="2">
+                  <spam className="fa fa-pie-chart fa-5x mt-2"></spam></Col>
                 </ButtonGroup>
                 <div className="text-personal"><strong>Mesclagem de dados</strong></div>
                 <div>
@@ -531,10 +536,12 @@ class Dashboard extends Component {
           </Col>
 
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-primary">
+            <Card className="text-white bg-gray-600">
               <CardBody className="pb-0">
                 <ButtonGroup className="float-center">
-                  <i className="icon-cloud-download"></i>
+                <Col xs="6" sm="4" md="3" lg="2">
+                  <span className="fa fa-archive fa-5x mt-2"></span>
+                </Col>
                 </ButtonGroup>
                 <div className="text-personal"><strong>Análise integrada</strong></div>
                 <div>
