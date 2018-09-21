@@ -537,6 +537,29 @@ class Dashboard extends Component {
         </Col>
       </Row>
 
+
+      <Row>
+        <Col>
+          <Card>
+            <CardBody>
+            <br/>
+              <div className="text-personal_2" align="center"><strong>Sobre o produto</strong></div>
+              <div>
+              <p></p>
+              <p className="text-personal_3" align="center">O GamesBI busca trazer aos Game Devs,
+              entusiastas da indústria de jogos e<br/>streamers, uma visão abrangente do que está
+              realmente acontecendo no mundo dos<br/>jogos atualmente através de análise de dados.</p>
+               <br/>
+
+               </div>
+
+            </CardBody>
+
+          </Card>
+        </Col>
+      </Row>
+
+
         <Row className="text-center">
           <Col xs="12" sm="6" lg="3">
             <Card className="text-white bg-gray-600">
@@ -547,13 +570,12 @@ class Dashboard extends Component {
                     <spam className="fa fa-gamepad fa-5x mt-1"></spam>
                   </Col>
                 </ButtonGroup>
-                <div className="text-personal"><strong>Principais fontes de dados</strong></div>
+                <div className="text-personal_1"><strong>Principais fontes de dados</strong></div>
                 <div>
                 <p></p>
                 <p className="text-center" align="justify">Principais APIs de distribuição<br/>de dados de jogos,
                  como por<br/>exemplo a API oficial da<br/>Twitch.</p>
                  <br/>
-
 
                  </div>
               </CardBody>
@@ -570,7 +592,7 @@ class Dashboard extends Component {
                   <spam className="fa fa-bar-chart fa-5x mt-1"></spam>
                 </Col>
                 </ButtonGroup>
-                <div className="text-personal"><strong>Análise visual</strong></div>
+                <div className="text-personal_1"><strong>Análise visual</strong></div>
                 <div>
                 <p></p>
                 <p className="text-center" align="justify">Vários tipos de gráficos e<br/>ordeneções capazes
@@ -590,7 +612,7 @@ class Dashboard extends Component {
                 <Col xs="6" sm="4" md="3" lg="2">
                   <spam className="fa fa-pie-chart fa-5x mt-2"></spam></Col>
                 </ButtonGroup>
-                <div className="text-personal"><strong>Mesclagem de<br/>dados</strong></div>
+                <div className="text-personal_1"><strong>Mesclagem de<br/>dados</strong></div>
                 <div>
                 <p></p>
                 <p className="text-center" align="justify">Dados completos e confiáveis<br/>serão apresentados
@@ -611,7 +633,7 @@ class Dashboard extends Component {
                   <span className="fa fa-archive fa-5x mt-1"></span>
                 </Col>
                 </ButtonGroup>
-                <div className="text-personal"><strong>Análise integrada</strong></div>
+                <div className="text-personal_1"><strong>Análise integrada</strong></div>
                 <div>
                 <p></p>
                 <p className="text-center" align="justify">Todo esse conjunto diferente<br/>de dados
