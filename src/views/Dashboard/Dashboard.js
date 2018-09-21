@@ -523,10 +523,10 @@ class Dashboard extends Component {
           <Card className="text-black bg-white_04">
             <CardBody>
             <br/>
-              <div className="text-personal_2" align="center"><strong>Sobre o produto</strong></div>
+              <div className="text-personal_2" align="center"><strong>SOBRE O PRODUTO</strong></div>
               <div>
               <p></p>
-              <p className="text-personal_3" align="center">O GamesBI busca trazer aos Game Devs,
+              <p className="text-personal_3" align="justify" align="center">O GamesBI busca trazer aos Game Devs,
               entusiastas da indústria de jogos e<br/>streamers, uma visão abrangente do que está
               realmente acontecendo no mundo dos<br/>jogos atualmente através de análise de dados.</p>
                <br/>
