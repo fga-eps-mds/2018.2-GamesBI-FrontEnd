@@ -43,6 +43,41 @@ const cardChartData1 = {
   ],
 };
 
+const line = {
+  labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+  datasets: [
+    {
+      label: 'My First dataset',
+      fill: false,
+      lineTension: 0.1,
+      backgroundColor: 'rgba(75,192,192,0.4)',
+      borderColor: 'rgba(75,192,192,1)',
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: 'rgba(75,192,192,1)',
+      pointBackgroundColor: '#fff',
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+      pointHoverBorderColor: 'rgba(220,220,220,1)',
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: [65, 59, 80, 81, 56, 55, 40],
+    },
+  ],
+};
+
+const options = {
+  tooltips: {
+    enabled: false,
+    custom: CustomTooltips
+  },
+  maintainAspectRatio: false
+}
+
 const cardChartOpts1 = {
   tooltips: {
     enabled: false,
@@ -480,67 +515,12 @@ class Dashboard extends Component {
 
     return (
       <div className="animated fadeIn">
-      <Row>
-        <Col>
-          <Card>
-            <CardBody>
-              <Row>
-                <Col sm="5">
-                  <CardTitle className="mb-2">Shadow of the Tomb Raider</CardTitle>
-                  <div className="small text-muted">November 2018</div>
-                </Col>
-                <Col sm="7" className="d-none d-sm-inline-block">
-                  <Button color="primary" className="float-right"><i className="icon-cloud-download"></i></Button>
-                  <ButtonToolbar className="float-right" aria-label="Toolbar with button groups">
-                    <ButtonGroup className="mr-3" aria-label="First group">
-                      <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(1)} active={this.state.radioSelected === 1}>Day</Button>
-                      <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(2)} active={this.state.radioSelected === 2}>Month</Button>
-                      <Button color="outline-secondary" onClick={() => this.onRadioBtnClick(3)} active={this.state.radioSelected === 3}>Year</Button>
-                    </ButtonGroup>
-                  </ButtonToolbar>
-                </Col>
-              </Row>
-              <div className="chart-wrapper" style={{ height: 300 + 'px', marginTop: 40 + 'px' }}>
-                <Line data={mainChart} options={mainChartOpts} height={300} />
-              </div>
-            </CardBody>
-            <CardFooter>
-              <Row className="text-center">
-                <Col sm={12} md className="mb-sm-2 mb-0">
-                  <div className="text-muted">Visits</div>
-                  <strong>29.703 Users (40%)</strong>
-                  <Progress className="progress-xs mt-2" color="success" value="40" />
-                </Col>
-                <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
-                  <div className="text-muted">Unique</div>
-                  <strong>24.093 Users (20%)</strong>
-                  <Progress className="progress-xs mt-2" color="info" value="20" />
-                </Col>
-                <Col sm={12} md className="mb-sm-2 mb-0">
-                  <div className="text-muted">Pageviews</div>
-                  <strong>78.706 Views (60%)</strong>
-                  <Progress className="progress-xs mt-2" color="warning" value="60" />
-                </Col>
-                <Col sm={12} md className="mb-sm-2 mb-0">
-                  <div className="text-muted">New Users</div>
-                  <strong>22.123 Users (80%)</strong>
-                  <Progress className="progress-xs mt-2" color="danger" value="80" />
-                </Col>
-                <Col sm={12} md className="mb-sm-2 mb-0 d-md-down-none">
-                  <div className="text-muted">Bounce Rate</div>
-                  <strong>Average Rate (40.15%)</strong>
-                  <Progress className="progress-xs mt-2" color="primary" value="40" />
-                </Col>
-              </Row>
-            </CardFooter>
-          </Card>
-        </Col>
-      </Row>
+
 
 
       <Row>
         <Col>
-          <Card className="text-white bg-gray-600">
+          <Card className="text-black bg-white_04">
             <CardBody>
             <br/>
               <div className="text-personal_2" align="center"><strong>Sobre o produto</strong></div>
@@ -562,7 +542,7 @@ class Dashboard extends Component {
 
         <Row className="text-center">
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-gray-600">
+            <Card className="text-black bg-white_04">
               <CardBody className="pb-border_1">
               <br/>
                 <ButtonGroup className="float-center">
@@ -583,7 +563,7 @@ class Dashboard extends Component {
           </Col>
 
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-gray-600">
+            <Card className="text-black bg-white_04">
               <CardBody className="pb-border_2">
               <br/>
               <br/>
@@ -606,7 +586,7 @@ class Dashboard extends Component {
           </Col>
 
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-gray-600">
+            <Card className="text-black bg-white_04">
               <CardBody className="pb-border_3">
                 <ButtonGroup className="float-center">
                 <Col xs="6" sm="4" md="3" lg="2">
@@ -624,7 +604,7 @@ class Dashboard extends Component {
           </Col>
 
           <Col xs="12" sm="6" lg="3">
-            <Card className="text-white bg-gray-600">
+            <Card className="text-black bg-white_04">
               <CardBody className="pb-border_4">
               <br/>
               <br/>
@@ -776,117 +756,169 @@ class Dashboard extends Component {
                         <strong>700008 hour</strong>
                       </td>
                     </tr>
-                    <tr>
-                      <td className="text-center">
-                        <div className="avatar_1">
-                          <img src={'assets/img/avatars/j4.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
 
-                        </div>
-                      </td>
-                      <td>
-                        <div> Assetto Corsa Competizione</div>
-                        <div className="small text-muted">
-                          <span>New</span> | Registered: Jan 1, 2015
-                        </div>
-                      </td>
-                      <td className="text-center">
-                        <i className="flag-icon flag-icon-fr h4 mb-0" title="fr" id="fr"></i>
-                      </td>
-                      <td>
-                        <div className="clearfix">
-                          <div className="float-left">
-                            <strong>98%</strong>
-                          </div>
-                          <div className="float-right">
-                            <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                          </div>
-                        </div>
-                        <Progress className="progress-xs" color="danger" value="98" />
-                      </td>
-                      <td className="text-center">
-                        <i className="fa fa-paypal" style={{ fontSize: 24 + 'px' }}></i>
-                      </td>
-                      <td>
-
-                        <strong>553008 hour</strong>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="text-center">
-                        <div className="avatar_1">
-                          <img src={'assets/img/avatars/j5.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
-
-                        </div>
-                      </td>
-                      <td>
-                        <div>Heavy Metal Machines</div>
-                        <div className="small text-muted">
-                          <span>New</span> | Registered: Jan 1, 2015
-                        </div>
-                      </td>
-                      <td className="text-center">
-                        <i className="flag-icon flag-icon-es h4 mb-0" title="es" id="es"></i>
-                      </td>
-                      <td>
-                        <div className="clearfix">
-                          <div className="float-left">
-                            <strong>22%</strong>
-                          </div>
-                          <div className="float-right">
-                            <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                          </div>
-                        </div>
-                        <Progress className="progress-xs" color="info" value="22" />
-                      </td>
-                      <td className="text-center">
-                        <i className="fa fa-google-wallet" style={{ fontSize: 24 + 'px' }}></i>
-                      </td>
-                      <td>
-
-                        <strong>350188 hour</strong>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="text-center">
-                        <div className="avatar_1">
-                          <img src={'assets/img/avatars/j6.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
-
-                        </div>
-                      </td>
-                      <td>
-                        <div>Breathedge</div>
-                        <div className="small text-muted">
-                          <span>New</span> | Registered: Jan 1, 2015
-                        </div>
-                      </td>
-                      <td className="text-center">
-                        <i className="flag-icon flag-icon-pl h4 mb-0" title="pl" id="pl"></i>
-                      </td>
-                      <td>
-                        <div className="clearfix">
-                          <div className="float-left">
-                            <strong>43%</strong>
-                          </div>
-                          <div className="float-right">
-                            <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
-                          </div>
-                        </div>
-                        <Progress className="progress-xs" color="success" value="43" />
-                      </td>
-                      <td className="text-center">
-                        <i className="fa fa-cc-amex" style={{ fontSize: 24 + 'px' }}></i>
-                      </td>
-                      <td>
-
-                        <strong>250145 hour</strong>
-                      </td>
-                    </tr>
                     </tbody>
                   </Table>
+                   <p align="left"><a href="#/TrendingGames">view more...</a></p>
                 </CardBody>
               </Card>
             </Col>
           </Row>
+
+
+          <Card>
+            <CardHeader>
+              Line Chart
+              <div className="card-header-actions">
+                <a href="http://www.chartjs.org" className="card-header-action">
+                  <small className="text-muted">docs</small>
+                </a>
+              </div>
+            </CardHeader>
+            <CardBody>
+              <div className="chart-wrapper">
+                <Line data={line} options={options} />
+              </div>
+            </CardBody>
+          </Card>
+
+
+                  <Row>
+                      <Col>
+                        <Card>
+                          <CardHeader>
+                            Top Games
+                          </CardHeader>
+                          <CardBody>
+
+                            <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
+                              <thead className="thead-light">
+                              <tr>
+                                <th className="text-center"><i className="fa fa-gamepad fa-ms mt-1"></i></th>
+                                <th>Game</th>
+                                <th className="text-center">Região</th>
+                                <th>Populadidade</th>
+                                <th className="text-center">Payment Method</th>
+                                <th>Horas jogadas</th>
+                              </tr>
+                              </thead>
+                              <tbody>
+                              <tr>
+                                <td className="text-center">
+                                  <div className="avatar_1">
+                                    <img src={'assets/img/avatars/j1.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
+
+                                  </div>
+                                </td>
+                                <td>
+                                  <div>Shadow of the Tomb Raider</div>
+                                  <div className="small text-muted">
+                                    <span>New</span> | Registered: Jan 1, 2015
+                                  </div>
+                                </td>
+                                <td className="text-center">
+                                  <i className="flag-icon flag-icon-us h4 mb-0" title="us" id="us"></i>
+                                </td>
+                                <td>
+                                  <div className="clearfix">
+                                    <div className="float-left">
+                                      <strong>50%</strong>
+                                    </div>
+                                    <div className="float-right">
+                                      <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                    </div>
+                                  </div>
+                                  <Progress className="progress-xs" color="success" value="50" />
+                                </td>
+                                <td className="text-center">
+                                  <i className="fa fa-cc-mastercard" style={{ fontSize: 24 + 'px' }}></i>
+                                </td>
+                                <td>
+
+                                  <strong>1123055 hour</strong>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td className="text-center">
+                                  <div className="avatar_1">
+                                    <img src={'assets/img/avatars/j2.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
+
+                                  </div>
+                                </td>
+                                <td>
+                                  <div>Ring of Elysium</div>
+                                  <div className="small text-muted">
+
+                                    <span>Recurring</span> | Registered: Jan 1, 2015
+                                  </div>
+                                </td>
+                                <td className="text-center">
+                                  <i className="flag-icon flag-icon-br h4 mb-0" title="br" id="br"></i>
+                                </td>
+                                <td>
+                                  <div className="clearfix">
+                                    <div className="float-left">
+                                      <strong>10%</strong>
+                                    </div>
+                                    <div className="float-right">
+                                      <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                    </div>
+                                  </div>
+                                  <Progress className="progress-xs" color="info" value="10" />
+                                </td>
+                                <td className="text-center">
+                                  <i className="fa fa-cc-visa" style={{ fontSize: 24 + 'px' }}></i>
+                                </td>
+                                <td>
+
+                                  <strong>1073998 hour</strong>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td className="text-center">
+                                  <div className="avatar_1">
+                                    <img src={'assets/img/avatars/j3.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
+
+                                  </div>
+                                </td>
+                                <td>
+                                  <div>Megaquarium</div>
+                                  <div className="small text-muted">
+                                    <span>New</span> | Registered: Jan 1, 2015
+                                  </div>
+                                </td>
+                                <td className="text-center">
+                                  <i className="flag-icon flag-icon-in h4 mb-0" title="in" id="in"></i>
+                                </td>
+                                <td>
+                                  <div className="clearfix">
+                                    <div className="float-left">
+                                      <strong>74%</strong>
+                                    </div>
+                                    <div className="float-right">
+                                      <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                                    </div>
+                                  </div>
+                                  <Progress className="progress-xs" color="warning" value="74" />
+                                </td>
+                                <td className="text-center">
+                                  <i className="fa fa-cc-stripe" style={{ fontSize: 24 + 'px' }}></i>
+                                </td>
+                                <td>
+
+                                  <strong>700008 hour</strong>
+                                </td>
+                              </tr>
+
+                              </tbody>
+                            </Table>
+                             <p align="left"><a href="#/TrendingGames">view more...</a></p>
+                          </CardBody>
+                        </Card>
+                      </Col>
+                    </Row>
+
+
 
       </div>
     );

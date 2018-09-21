@@ -9890,13 +9890,16 @@ body {
 .text-personal_3 {
   font-size: 1.4rem; }
 
-.img-avatar_1 {
+.img-avatar_1, .avatar_1 > img {
   max-width: 100%;
   height: auto; }
 
-.img-avatar_1 {
+.app-header .nav-item .nav-link > .img-avatar_1, .app-header .nav-item .avatar.nav-link > img {
   height: 35px;
   margin: 0 10px; }
+
+.bg-white_04 {
+  background-color: rgba(255, 255, 255, 0.4) !important; }
 
 html body .app.flex-row.align-items-center {
   height: 100vh; }
