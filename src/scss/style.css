@@ -9869,11 +9869,17 @@ body {
 .app-header .navbar-nav .dropdown-menu-right {
   right: auto; }
 
-.pb-border {
+.pb-border_1 {
+  padding-bottom: 50px !important; }
+
+.pb-border_2 {
   padding-bottom: 60px !important; }
 
-.pb-border_1 {
-  padding-bottom: 45px !important; }
+.pb-border_3 {
+  padding-bottom: 3px !important; }
+
+.pb-border_4 {
+  padding-bottom: 56px !important; }
 
 .text-personal {
   font-size: 1.3rem; }
