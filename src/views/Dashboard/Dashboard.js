@@ -486,8 +486,8 @@ class Dashboard extends Component {
             <CardBody>
               <Row>
                 <Col sm="5">
-                  <CardTitle className="mb-0">coco</CardTitle>
-                  <div className="small text-muted">November 2015</div>
+                  <CardTitle className="mb-2">Shadow of the Tomb Raider</CardTitle>
+                  <div className="small text-muted">November 2018</div>
                 </Col>
                 <Col sm="7" className="d-none d-sm-inline-block">
                   <Button color="primary" className="float-right"><i className="icon-cloud-download"></i></Button>
@@ -540,7 +540,7 @@ class Dashboard extends Component {
 
       <Row>
         <Col>
-          <Card>
+          <Card className="text-white bg-gray-600">
             <CardBody>
             <br/>
               <div className="text-personal_2" align="center"><strong>Sobre o produto</strong></div>
@@ -649,81 +649,245 @@ class Dashboard extends Component {
         </Row>
 
 
-        <Row>
-          <Col xs="6" sm="6" lg="3">
-            <Widget03 dataBox={() => ({ variant: 'facebook', friends: '89k', feeds: '459' })} >
-              <div className="chart-wrapper">
-                <Line data={makeSocialBoxData(0)} options={socialChartOpts} height={90} />
-              </div>
-            </Widget03>
-          </Col>
-
-          <Col xs="6" sm="6" lg="3">
-            <div className="brand-card">
-              <div className="brand-card-header bg-twitter">
-                <i className="fa fa-twitter"></i>
-                <div className="chart-wrapper">
-                  <Line data={makeSocialBoxData(1)} options={socialChartOpts} height={90} />
-                </div>
-              </div>
-              <div className="brand-card-body">
-                <div>
-                  <div className="text-value">973k</div>
-                  <div className="text-uppercase text-muted small">followers</div>
-                </div>
-                <div>
-                  <div className="text-value">1.792</div>
-                  <div className="text-uppercase text-muted small">tweets</div>
-                </div>
-              </div>
-            </div>
-          </Col>
-
-          <Col xs="6" sm="6" lg="3">
-            <div className="brand-card">
-              <div className="brand-card-header bg-linkedin">
-                <i className="fa fa-linkedin"></i>
-                <div className="chart-wrapper">
-                  <Line data={makeSocialBoxData(2)} options={socialChartOpts} height={90} />
-                </div>
-              </div>
-              <div className="brand-card-body">
-                <div>
-                  <div className="text-value">500+</div>
-                  <div className="text-uppercase text-muted small">contacts</div>
-                </div>
-                <div>
-                  <div className="text-value">292</div>
-                  <div className="text-uppercase text-muted small">feeds</div>
-                </div>
-              </div>
-            </div>
-          </Col>
-
-          <Col xs="6" sm="6" lg="3">
-            <div className="brand-card">
-              <div className="brand-card-header bg-google-plus">
-                <i className="fa fa-google-plus"></i>
-                <div className="chart-wrapper">
-                  <Line data={makeSocialBoxData(3)} options={socialChartOpts} height={90} />
-                </div>
-              </div>
-              <div className="brand-card-body">
-                <div>
-                  <div className="text-value">894</div>
-                  <div className="text-uppercase text-muted small">followers</div>
-                </div>
-                <div>
-                  <div className="text-value">92</div>
-                  <div className="text-uppercase text-muted small">circles</div>
-                </div>
-              </div>
-            </div>
-          </Col>
-        </Row>
 
         <Row>
-        </Row>
+            <Col>
+              <Card>
+                <CardHeader>
+                  Top Games
+                </CardHeader>
+                <CardBody>
+
+                  <Table hover responsive className="table-outline mb-0 d-none d-sm-table">
+                    <thead className="thead-light">
+                    <tr>
+                      <th className="text-center"><i className="fa fa-gamepad fa-ms mt-1"></i></th>
+                      <th>Game</th>
+                      <th className="text-center">Região</th>
+                      <th>Populadidade</th>
+                      <th className="text-center">Payment Method</th>
+                      <th>Horas jogadas</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                      <td className="text-center">
+                        <div className="avatar_1">
+                          <img src={'assets/img/avatars/j1.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
+
+                        </div>
+                      </td>
+                      <td>
+                        <div>Shadow of the Tomb Raider</div>
+                        <div className="small text-muted">
+                          <span>New</span> | Registered: Jan 1, 2015
+                        </div>
+                      </td>
+                      <td className="text-center">
+                        <i className="flag-icon flag-icon-us h4 mb-0" title="us" id="us"></i>
+                      </td>
+                      <td>
+                        <div className="clearfix">
+                          <div className="float-left">
+                            <strong>50%</strong>
+                          </div>
+                          <div className="float-right">
+                            <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          </div>
+                        </div>
+                        <Progress className="progress-xs" color="success" value="50" />
+                      </td>
+                      <td className="text-center">
+                        <i className="fa fa-cc-mastercard" style={{ fontSize: 24 + 'px' }}></i>
+                      </td>
+                      <td>
+
+                        <strong>1123055 hour</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="text-center">
+                        <div className="avatar_1">
+                          <img src={'assets/img/avatars/j2.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
+
+                        </div>
+                      </td>
+                      <td>
+                        <div>Ring of Elysium</div>
+                        <div className="small text-muted">
+
+                          <span>Recurring</span> | Registered: Jan 1, 2015
+                        </div>
+                      </td>
+                      <td className="text-center">
+                        <i className="flag-icon flag-icon-br h4 mb-0" title="br" id="br"></i>
+                      </td>
+                      <td>
+                        <div className="clearfix">
+                          <div className="float-left">
+                            <strong>10%</strong>
+                          </div>
+                          <div className="float-right">
+                            <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          </div>
+                        </div>
+                        <Progress className="progress-xs" color="info" value="10" />
+                      </td>
+                      <td className="text-center">
+                        <i className="fa fa-cc-visa" style={{ fontSize: 24 + 'px' }}></i>
+                      </td>
+                      <td>
+
+                        <strong>1073998 hour</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="text-center">
+                        <div className="avatar_1">
+                          <img src={'assets/img/avatars/j3.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
+
+                        </div>
+                      </td>
+                      <td>
+                        <div>Megaquarium</div>
+                        <div className="small text-muted">
+                          <span>New</span> | Registered: Jan 1, 2015
+                        </div>
+                      </td>
+                      <td className="text-center">
+                        <i className="flag-icon flag-icon-in h4 mb-0" title="in" id="in"></i>
+                      </td>
+                      <td>
+                        <div className="clearfix">
+                          <div className="float-left">
+                            <strong>74%</strong>
+                          </div>
+                          <div className="float-right">
+                            <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          </div>
+                        </div>
+                        <Progress className="progress-xs" color="warning" value="74" />
+                      </td>
+                      <td className="text-center">
+                        <i className="fa fa-cc-stripe" style={{ fontSize: 24 + 'px' }}></i>
+                      </td>
+                      <td>
+
+                        <strong>700008 hour</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="text-center">
+                        <div className="avatar_1">
+                          <img src={'assets/img/avatars/j4.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
+
+                        </div>
+                      </td>
+                      <td>
+                        <div> Assetto Corsa Competizione</div>
+                        <div className="small text-muted">
+                          <span>New</span> | Registered: Jan 1, 2015
+                        </div>
+                      </td>
+                      <td className="text-center">
+                        <i className="flag-icon flag-icon-fr h4 mb-0" title="fr" id="fr"></i>
+                      </td>
+                      <td>
+                        <div className="clearfix">
+                          <div className="float-left">
+                            <strong>98%</strong>
+                          </div>
+                          <div className="float-right">
+                            <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          </div>
+                        </div>
+                        <Progress className="progress-xs" color="danger" value="98" />
+                      </td>
+                      <td className="text-center">
+                        <i className="fa fa-paypal" style={{ fontSize: 24 + 'px' }}></i>
+                      </td>
+                      <td>
+
+                        <strong>553008 hour</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="text-center">
+                        <div className="avatar_1">
+                          <img src={'assets/img/avatars/j5.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
+
+                        </div>
+                      </td>
+                      <td>
+                        <div>Heavy Metal Machines</div>
+                        <div className="small text-muted">
+                          <span>New</span> | Registered: Jan 1, 2015
+                        </div>
+                      </td>
+                      <td className="text-center">
+                        <i className="flag-icon flag-icon-es h4 mb-0" title="es" id="es"></i>
+                      </td>
+                      <td>
+                        <div className="clearfix">
+                          <div className="float-left">
+                            <strong>22%</strong>
+                          </div>
+                          <div className="float-right">
+                            <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          </div>
+                        </div>
+                        <Progress className="progress-xs" color="info" value="22" />
+                      </td>
+                      <td className="text-center">
+                        <i className="fa fa-google-wallet" style={{ fontSize: 24 + 'px' }}></i>
+                      </td>
+                      <td>
+
+                        <strong>350188 hour</strong>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="text-center">
+                        <div className="avatar_1">
+                          <img src={'assets/img/avatars/j6.jpg'} className="img-avatar_1" alt="admin@bootstrapmaster.com" />
+
+                        </div>
+                      </td>
+                      <td>
+                        <div>Breathedge</div>
+                        <div className="small text-muted">
+                          <span>New</span> | Registered: Jan 1, 2015
+                        </div>
+                      </td>
+                      <td className="text-center">
+                        <i className="flag-icon flag-icon-pl h4 mb-0" title="pl" id="pl"></i>
+                      </td>
+                      <td>
+                        <div className="clearfix">
+                          <div className="float-left">
+                            <strong>43%</strong>
+                          </div>
+                          <div className="float-right">
+                            <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          </div>
+                        </div>
+                        <Progress className="progress-xs" color="success" value="43" />
+                      </td>
+                      <td className="text-center">
+                        <i className="fa fa-cc-amex" style={{ fontSize: 24 + 'px' }}></i>
+                      </td>
+                      <td>
+
+                        <strong>250145 hour</strong>
+                      </td>
+                    </tr>
+                    </tbody>
+                  </Table>
+                </CardBody>
+              </Card>
+            </Col>
+          </Row>
+
       </div>
     );
   }

@@ -9890,5 +9890,13 @@ body {
 .text-personal_3 {
   font-size: 1.4rem; }
 
+.img-avatar_1 {
+  max-width: 100%;
+  height: auto; }
+
+.img-avatar_1 {
+  height: 35px;
+  margin: 0 10px; }
+
 html body .app.flex-row.align-items-center {
   height: 100vh; }
