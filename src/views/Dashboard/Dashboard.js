@@ -523,7 +523,7 @@ class Dashboard extends Component {
           <Card className="text-black bg-white_04">
             <CardBody>
             <br/>
-              <div className="text-personal_2" align="center"><strong>SOBRE O PRODUTO</strong></div>
+              <div className="text-personal_2" align="center"><strong>Sobre GamesBI</strong></div>
               <div>
               <p></p>
               <p className="text-personal_3" align="justify" align="center">O GamesBI busca trazer aos Game Devs,
@@ -768,7 +768,7 @@ class Dashboard extends Component {
 
           <Card>
             <CardHeader>
-              Line Chart
+              Game Users
               <div className="card-header-actions">
                 <a href="http://www.chartjs.org" className="card-header-action">
                   <small className="text-muted">docs</small>
