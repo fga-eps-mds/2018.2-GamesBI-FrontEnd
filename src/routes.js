@@ -177,6 +177,11 @@ const Users = Loadable({
   loading: Loading,
 });
 
+const TrendingGames = Loadable({
+  loader: () => import('./views/TrendingGames/TrendingGames'),
+  loading: Loading,
+});
+
 const User = Loadable({
   loader: () => import('./views/Users/User'),
   loading: Loading,
@@ -226,6 +231,7 @@ const routes = [
   { path: '/widgets', name: 'Widgets', component: Widgets },
   { path: '/charts', name: 'Charts', component: Charts },
   { path: '/users', exact: true,  name: 'Users', component: Users },
+  { path: '/TrendingGames', exact: true,  name: 'TrendingGames', component: TrendingGames },
   { path: '/users/:id', exact: true, name: 'User Details', component: User },
 ];
 
