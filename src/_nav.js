@@ -1,17 +1,13 @@
 export default {
   items: [
     {
-      name: 'Dashboard',
+      name: 'Início',
       url: '/dashboard',
-      icon: 'icon-speedometer',
-      badge: {
-        variant: 'info',
-        text: 'NEW',
-      },
+      icon: 'icon-home',
     },
     {
       title: true,
-      name: 'Theme',
+      name: 'Jogos',
       wrapper: {            // optional wrapper object
         element: '',        // required valid HTML5 element tag
         attributes: {}        // optional valid JS object with JS API naming ex: { className: "my-class", style: { fontFamily: "Verdana" }, id: "my-id"}
@@ -19,50 +15,47 @@ export default {
       class: ''             // optional class names space delimited list for title item ex: "text-center"
     },
     {
-      name: 'Colors',
-      url: '/theme/colors',
-      icon: 'icon-drop',
+      name: 'Tendências',
+      url: '/TrendingGames',
+      icon: 'icon-badge',
     },
     {
-      name: 'Typography',
+      name: 'Recentes',
+      url: '/base/progress-bar',
+      icon: 'icon-graph',
+    },
+    {
+      name: 'Horas jogadas',
       url: '/theme/typography',
-      icon: 'icon-pencil',
+      icon: 'icon-clock',
     },
     {
-      title: true,
-      name: 'Components',
-      wrapper: {
-        element: '',
-        attributes: {},
-      },
-    },
-    {
-      name: 'Base',
+      name: 'Gênero',
       url: '/base',
       icon: 'icon-puzzle',
       children: [
         {
-          name: 'Breadcrumbs',
+          name: 'Aventura',
           url: '/base/breadcrumbs',
           icon: 'icon-puzzle',
         },
         {
-          name: 'Cards',
+          name: 'Rpg',
           url: '/base/cards',
           icon: 'icon-puzzle',
         },
         {
-          name: 'Carousels',
+          name: 'Estratégia',
           url: '/base/carousels',
           icon: 'icon-puzzle',
         },
         {
-          name: 'Collapses',
+          name: 'Indie',
           url: '/base/collapses',
           icon: 'icon-puzzle',
         },
         {
-          name: 'Dropdowns',
+          name: 'Esportes',
           url: '/base/dropdowns',
           icon: 'icon-puzzle',
         },
@@ -255,6 +248,6 @@ export default {
         },
       ],
     },
-    
+
   ],
 };

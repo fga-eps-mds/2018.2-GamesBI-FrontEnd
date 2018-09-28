@@ -26,19 +26,22 @@ class DefaultHeader extends Component {
           minimized={{ src: sygnet, width: 40, height: 40, alt: 'CoreUI Logo' }}
         />
         <AppSidebarToggler className="d-md-down-none" display="lg" />
-
         <Nav className="d-md-down-none" navbar>
           <NavItem className="px-3">
             <NavLink href="#/">Home</NavLink>
           </NavItem>
-          <NavItem className="px-3">
-            <NavLink href="#/TrendingGames">Trending Games</NavLink>
-          </NavItem>
-
         </Nav>
+        <div class="wrap">
+        <div className="search">
+        <input type="text" className="searchTerm" align="center" placeholder="O que você procura?" ></input>
+        <button type="submit" className="searchButton">
+        <i className="fa fa-search"></i>
+        </button>
+        </div>
+        </div>
         <Nav className="ml-auto" navbar>
-
         </Nav>
+
         <AppAsideToggler className="d-md-down-none" />
         {/*<AppAsideToggler className="d-lg-none" mobile />*/}
       </React.Fragment>
