@@ -1,6 +1,6 @@
 {
-  "name": "front",
-  "version": "0.1.0",
+  "name": "GamesBI Front End",
+  "version": "1.0.2",
   "private": true,
   "dependencies": {
     "react": "^16.5.2",
