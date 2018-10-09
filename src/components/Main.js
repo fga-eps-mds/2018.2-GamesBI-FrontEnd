@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Footer from './Footer'
+import SearchBar from './SearchBar'
 
 class MainContent extends Component {
 
@@ -13,16 +14,7 @@ class MainContent extends Component {
 
           <a className="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
 
-          <form className="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-            <div className="form-group mb-0">
-              <div className="input-group input-group-alternative">
-                <div className="input-group-prepend">
-                  <span className="input-group-text"><i className="fas fa-search"></i></span>
-                </div>
-                <input className="form-control" placeholder="Search" type="text" />
-              </div>
-            </div>
-          </form>
+          <SearchBar />
 
           <ul className="navbar-nav align-items-center d-none d-md-flex">
             <li className="nav-item dropdown">
