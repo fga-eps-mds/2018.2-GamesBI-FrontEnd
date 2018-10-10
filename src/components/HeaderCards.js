@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Footer extends Component {
+class HeaderCard extends Component {
   render() {
     return (
 
@@ -30,4 +30,4 @@ class Footer extends Component {
   }
 }
 
-export default Footer;
+export default HeaderCard;
