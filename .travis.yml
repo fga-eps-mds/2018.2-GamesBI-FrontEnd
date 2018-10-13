@@ -1,9 +1,6 @@
 language: node_js
 node_js:
   - "stable"
-cache:
-  directories:
-    - node_modules
 before_install: docker-compose build
 script:
   - docker-compose run web npm test -- --coverage 
