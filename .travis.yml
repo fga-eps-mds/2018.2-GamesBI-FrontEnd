@@ -10,9 +10,19 @@ after_success:
   - docker-compose run web npm run coveralls
 
 deploy:
-  provider: surge
-  skip_cleanup: true
-  domain: gamesBI.surge.sh
-  project: ./build/
-on:
-  branch: master
+  - provider: heroku
+    skip_cleanup: true
+    api_key:
+      secure: ${HEROKU_KEY}
+    app: gbi-frontend-staging
+    on:
+      repo: fga-eps-mds/2018.2-GamesBI-FrontEnd
+      branch: develop
+  - provider: heroku
+    skip_cleanup: true
+    api_key:
+      secure: ${HEROKU_KEY}
+    app: gbi-frontend-production
+    on:
+      repo: fga-eps-mds/2018.2-GamesBI-FrontEnd
+      branch: master
