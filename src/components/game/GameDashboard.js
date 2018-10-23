@@ -8,6 +8,13 @@ import SideCard from '../SideCard'
 import Title from './Title'
 
 class GameDashboard extends Component {
+constructor(props) {
+      super(props);
+      this.state = {
+        name:"nome do jogo",
+        
+      };
+    }
 
   render() {
     return (
@@ -17,7 +24,7 @@ class GameDashboard extends Component {
       <nav className="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
         <div className="container-fluid">
 
-          <a className="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="./index.html">Dashboard</a>
+          <a className="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block " href="./index.html">Dashboard</a>
 
           <SearchBar  />
 
@@ -31,7 +38,7 @@ class GameDashboard extends Component {
 
 
 
-            <Title className="title-game" />
+            <Title  >{this.state.name}</Title>
 
 
           </div>
@@ -43,7 +50,9 @@ class GameDashboard extends Component {
           <div className="col-xl-8 mb-5 mb-xl-0">
             <div className="card bg-gradient-default shadow">
 
-
+            <div>
+            <Title className="game2">3{this.state.name}</Title>
+            </div>
 
             </div>
           </div>

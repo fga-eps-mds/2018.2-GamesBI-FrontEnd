@@ -1,0 +1,15 @@
+.game {
+ font-size :40px;
+
+ color: white;
+ align-items: center;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
+}
+.game2{
+    font-size :80px;
+
+    color: black;
+}
