@@ -13,3 +13,11 @@
 
     color: black;
 }
+.bg-gradient-custom
+{
+    background: linear-gradient(87deg, #616161 0, #212121 100%) !important;
+}
+.bg-gradient-primary_2
+{
+    background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
+}

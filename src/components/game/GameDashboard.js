@@ -6,13 +6,19 @@ import HeaderCards from '../HeaderCards'
 import GraphicCard from '../GraphicCard'
 import SideCard from '../SideCard'
 import Title from './Title'
-
+import './index.css'
 class GameDashboard extends Component {
 constructor(props) {
       super(props);
       this.state = {
         name:"nome do jogo",
-        
+        languages: "pt-br",
+        genre:"aventura",
+        count_views:"100",
+        count_likes:"200",
+        count_dislikes:"50",
+        owners:"300",
+        price:"25 dols"
       };
     }
 
@@ -31,7 +37,7 @@ constructor(props) {
         </div>
       </nav>
 
-      <div className="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+      <div className="header bg-gradient-custom pb-8 pt-5 pt-md-8">
         <div className="container-fluid">
           <div className="header-body">
 
