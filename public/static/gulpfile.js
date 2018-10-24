@@ -44,7 +44,7 @@ var paths = {
         scss: 'assets/scss/**/*.scss'
     }
 }
-
+/**
 // Compile SCSS
 
 gulp.task('scss', function() {
@@ -140,3 +140,4 @@ gulp.task('default', function(callback) {
         callback
     )
 });
+**/

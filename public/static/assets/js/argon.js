@@ -19,7 +19,7 @@
 //
 // Bootstrap Datepicker
 //
-
+/**
 'use strict';
 
 var Datepicker = (function() {
@@ -955,7 +955,7 @@ var OrdersChart = (function() {
 							}
 
 							content += '<span class="popover-body-value">' + yLabel + '</span>';
-							
+
 							return content;
 						}
 					}
@@ -1061,3 +1061,4 @@ var SalesChart = (function() {
 	}
 
 })();
+**/
