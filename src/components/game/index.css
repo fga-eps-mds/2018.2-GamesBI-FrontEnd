@@ -7,11 +7,13 @@
  flex-direction: row;
  flex-wrap: wrap;
  justify-content: center;
+ font-family: 'Chakra Petch', sans-serif;
 }
 
 
 .game-info{
     color:black;
+    font-family: 'Chakra Petch', sans-serif!important;
 
 }
 .game-info a{

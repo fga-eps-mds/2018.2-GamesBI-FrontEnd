@@ -6,7 +6,7 @@ export function ImportGame(){
 
         //const response = axios.get(`https://jsonplaceholder.typicode.com/todos/1`).then(res => this.setState({ response: res.data }));
          const response = {
-            "title": "dota"
+            "title": "Watch Dogs 2"
         }
 
   return{
