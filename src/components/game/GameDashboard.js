@@ -8,12 +8,13 @@ import SideCard from '../SideCard'
 import Title from './Title'
 import GameInfo from './GameInfo'
 import './index.css'
+import {ImportGame} from '../../actions/ImportGame'
 import axios from 'axios';
 class GameDashboard extends Component {
 constructor(props) {
       super(props);
       this.state = {
-        response: {},
+        response: ImportGame(),
         name:"nome do jogo",
         languages: "pt-br",
         genre:"aventura",
@@ -24,11 +25,10 @@ constructor(props) {
         price:"25 dols"
       }
     }
-componentWillMount(){
-    const response = axios.get(`https://jsonplaceholder.typicode.com/todos/1`).then(res => this.setState({ response: res.data }));
-}
+
   render() {
-       console.log(this.state.response)
+
+       console.log(ImportGame())
     return (
 
     <div className="main-content">
@@ -43,14 +43,14 @@ componentWillMount(){
         </div>
       </nav>
 
-      <div className="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+      <div className="header bg-gradient-custom pb-8 pt-5 pt-md-8">
         <div className="container-fluid">
           <div className="header-body">
 
 
 
 
-            <Title  >{this.state.response.title}</Title>
+            <Title  >{this.state.response.response.title}</Title>
 
 
           </div>
@@ -61,6 +61,8 @@ componentWillMount(){
         <div className="row">
           <div className="col-xl-8 mb-5 mb-xl-0">
             <div className="card bg-gradient-default shadow">
+
+
 
 
 

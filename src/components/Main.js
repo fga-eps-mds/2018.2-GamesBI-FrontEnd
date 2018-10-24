@@ -48,7 +48,7 @@ class MainContent extends Component {
             <div className="card bg-gradient-default shadow">
 
               <GraphicCard title="Owners"></GraphicCard>
-
+              
             </div>
           </div>
           <div className="col-xl-4">
