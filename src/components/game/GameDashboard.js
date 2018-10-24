@@ -62,16 +62,21 @@ componentWillMount(){
           <div className="col-xl-8 mb-5 mb-xl-0">
             <div className="card bg-gradient-default shadow">
 
-            <div className="table-info-game">
-            <GameInfo className="game-info">Linguagem: {this.state.languages}</GameInfo>
-            <GameInfo className="game-info">Genero: {this.state.genre}</GameInfo>
-            <GameInfo className="game-info"> Numero de views: {this.state.count_views}</GameInfo>
-            <GameInfo className="game-info">Numero de likes: {this.state.count_likes}</GameInfo>
-            <GameInfo className="game-info">Quatidade de donos: {this.state.owners}</GameInfo>
-            <GameInfo className="game-info">Preço: {this.state.price}</GameInfo>
-            </div>
+
 
             </div>
+          </div>
+          <div className="col-xl-4">
+            <SideCard title="Teste">
+                <div className="table-info-game">
+                    <GameInfo className="game-info"><h3>Linguagem: <a>{this.state.languages}</a></h3></GameInfo>
+                    <GameInfo className="game-info"><h3>Genero: <a>{this.state.genre}</a></h3></GameInfo>
+                    <GameInfo className="game-info"><h3>Numero de views: <a>{this.state.count_views}</a></h3></GameInfo>
+                    <GameInfo className="game-info"><h3>Numero de likes: <a>{this.state.count_likes}</a></h3></GameInfo>
+                    <GameInfo className="game-info"><h3>Quatidade de donos: <a>{this.state.owners}</a></h3></GameInfo>
+                    <GameInfo className="game-info"><h3>Preço: <a>{this.state.price}</a></h3></GameInfo>
+                </div>
+            </SideCard>
           </div>
         </div>
         <Footer />

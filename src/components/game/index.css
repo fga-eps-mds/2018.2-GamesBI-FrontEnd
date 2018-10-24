@@ -11,7 +11,15 @@
 
 
 .game-info{
-    color:white;
+    color:black;
+
+}
+.game-info a{
+    color:black!important;
+    font-weight:normal !important;
+}
+.game-info h3{
+    padding: 10px!important;
 }
 .table-info-game{
     padding: 10px;

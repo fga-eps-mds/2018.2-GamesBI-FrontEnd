@@ -4,7 +4,7 @@ class GameInfo extends Component {
 
   render() {
     return (
-      <h2 className={this.props.className}>{this.props.children}</h2>
+      <div className={this.props.className}>{this.props.children}</div>
     )
   }
 }
