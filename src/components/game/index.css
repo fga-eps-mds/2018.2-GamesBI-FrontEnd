@@ -8,16 +8,19 @@
  flex-wrap: wrap;
  justify-content: center;
 }
-.game2{
-    font-size :80px;
 
-    color: black;
+
+.game-info{
+    color:white;
+}
+.table-info-game{
+    padding: 10px;
 }
 .bg-gradient-custom
 {
-    background: linear-gradient(87deg, #616161 0, #212121 100%) !important;
+    background: linear-gradient(87deg,#0288D1 0, #0277BD 100%) !important;
 }
-.bg-gradient-primary_2
+.bg-gradient-info
 {
-    background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
+    background: linear-gradient(87deg, #0288D1 0, #01579B 100%) !important;
 }
