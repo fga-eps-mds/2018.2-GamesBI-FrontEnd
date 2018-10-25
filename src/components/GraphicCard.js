@@ -9,7 +9,9 @@ class GraphicCard extends Component {
             <div className="col">
               <h2 className="text-white mb-0"> {this.props.title} </h2>
             </div>
-            {this.props.children}
+            
+            {this.props.component}
+
           </div>
 
         </div>
@@ -17,7 +19,7 @@ class GraphicCard extends Component {
         <div className="card-body">
 
           <div className="chart">
-            <canvas id="chart-sales" className="chart-canvas"></canvas>
+            {this.props.children}
           </div>
 
         </div>

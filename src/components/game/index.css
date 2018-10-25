@@ -1,19 +1,29 @@
 .game {
  font-size :40px;
-
  color: white;
  align-items: center;
  display: flex;
  flex-direction: row;
  flex-wrap: wrap;
  justify-content: center;
+ margin-left: 60px;
+ font-family: 'Chakra Petch', sans-serif;
+}
+.game2 {
+ font-size :20px;
+ color: white;
+ align-items: center;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
+ margin-left: 60px;
  font-family: 'Chakra Petch', sans-serif;
 }
 
 
 .game-info{
     color:black;
-    font-family: 'Chakra Petch', sans-serif!important;
 
 }
 .game-info a{
@@ -39,4 +49,23 @@
 }
 .GraphicCard button{
     margin-right: 20px !important;
+}
+.SideCard{
+        font-family: 'Chakra Petch', sans-serif!important;
+}
+.imagem{
+    height: 200px;
+    width: 670px;
+    padding: 0px;
+    margin-left: 15px;
+    border-radius: 10px;
+}
+.graficos{
+    height: 350px;
+    width: 620px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 }
