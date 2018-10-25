@@ -62,7 +62,13 @@ constructor(props) {
           <div className="col-xl-8 mb-5 mb-xl-0">
             <div className="card bg-gradient-default shadow">
 
+            <GraphicCard title ="Graficos">
 
+            <button className="btn btn-primary" type="button">Grafico 1</button>
+            <button className="btn btn-primary" type="button">Grafico 2</button>
+            <button className="btn btn-primary" type="button">Grafico 3</button>
+            <button className="btn btn-primary" type="button">Grafico 4</button>
+            </GraphicCard>
 
 
 

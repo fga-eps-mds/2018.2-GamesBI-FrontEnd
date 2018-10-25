@@ -7,10 +7,11 @@ class GraphicCard extends Component {
         <div className="card-header bg-transparent">
           <div className="row align-items-center">
             <div className="col">
-              <h6 className="text-uppercase text-light ls-1 mb-1">Overview</h6>
               <h2 className="text-white mb-0"> {this.props.title} </h2>
             </div>
+            {this.props.children}
           </div>
+
         </div>
 
         <div className="card-body">
@@ -26,5 +27,4 @@ class GraphicCard extends Component {
     );
   }
 }
-
 export default GraphicCard;

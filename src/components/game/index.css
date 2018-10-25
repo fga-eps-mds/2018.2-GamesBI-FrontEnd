@@ -34,3 +34,9 @@
 {
     background: linear-gradient(87deg, #0288D1 0, #01579B 100%) !important;
 }
+.GraphicCard{
+    font-family: 'Chakra Petch', sans-serif!important;
+}
+.GraphicCard button{
+    margin-right: 20px !important;
+}
