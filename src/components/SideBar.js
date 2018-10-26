@@ -6,7 +6,7 @@ class SideBar extends Component {
       <nav className="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
         <div className="container-fluid">
 
-          <a className="navbar-brand pt-0" href="./index.html">
+          <a className="navbar-brand pt-0" href="/">
             <img src="./static/assets/img/logo.png" className="navbar-brand-img" alt="..." />
           </a>
 
