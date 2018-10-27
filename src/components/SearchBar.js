@@ -10,12 +10,12 @@ class SearchBar extends Component {
   state = {
     data: [],
     query: '',
-    results: {}
+    results: []
   }
 
   getInfo = () => {
-    axios.get(`https://jsonplaceholder.typicode.com/todos/${this.state.query}`)
-    .then(res => this.setState({ results: res.data }))
+    const data = axios.get(`http://192.168.0.10:8004/api/?name=${this.state.query}`)
+    .then(res => this.setState({ data: res.data }))
 //    data: Array.from(this.state.results)
   }
 
@@ -35,7 +35,7 @@ class SearchBar extends Component {
 
 
   render() {
-
+    console.log(this.state.data)
       console.log(this.state.results)
     return (
 
@@ -45,7 +45,7 @@ class SearchBar extends Component {
           ref={input => this.search = input}
           onChange={this.handleInputChange}
         />
-        <Suggestions results={this.state.results} />
+        <Suggestions results={this.state.data} />
       </form>
     )
   }
