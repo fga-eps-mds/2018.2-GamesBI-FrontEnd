@@ -4,22 +4,15 @@ class Suggestions extends Component {
 render() {
     let laco =[]
     for (let data in this.props.results){
-        laco.push(<li key={data.id}>{data.title}</li>)
-        console.log(data["id"])
+         var item = this.props.results[data];
+        laco.push(<li key={item}>{item}</li>)
+        console.log(item)
       }
   return(
-
       <ul>
-      {laco}
+        {laco}
       </ul>
-//this.props.results.forEach(function(title){
-         // console.log(title)
-         // })
-       //<ul>{props.results.forEach(r => (
-    //<li key={r.title}>
-    //  {r.title}
-    //</li>
- //))}</ul>
+
 )
 }
 }
