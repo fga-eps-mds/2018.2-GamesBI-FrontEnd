@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const Suggestions = (props) => {
-  return <ul>{props.results.map(r => (
-    <li key={r.id}>
-      {r.title}
-    </li>
-  ))}</ul>
+class Suggestions extends Component {
+render() {
+    let laco =[]
+    for (let data in this.props.results){
+        laco.push(<li key={data.id}>{data.title}</li>)
+        console.log(data["id"])
+      }
+  return(
+
+      <ul>
+      {laco}
+      </ul>
+//this.props.results.forEach(function(title){
+         // console.log(title)
+         // })
+       //<ul>{props.results.forEach(r => (
+    //<li key={r.title}>
+    //  {r.title}
+    //</li>
+ //))}</ul>
+)
 }
+}
+
 
 export default Suggestions

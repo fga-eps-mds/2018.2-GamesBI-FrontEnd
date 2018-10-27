@@ -6,7 +6,7 @@ const { API_KEY } = process.env
 const API_URL = 'http://api.musicgraph.com/api/v2/artist/suggest'
 
 class SearchBar extends Component {
-  
+
   state = {
     data: [],
     query: '',
@@ -16,12 +16,13 @@ class SearchBar extends Component {
   getInfo = () => {
     axios.get(`https://jsonplaceholder.typicode.com/todos/${this.state.query}`)
     .then(res => this.setState({ results: res.data }))
+//    data: Array.from(this.state.results)
   }
 
   handleInputChange = () => {
     this.setState({
       query: this.search.value,
-      data: Array.from(this.state.results)
+
     }, () => {
       if (this.state.query && this.state.query.length > 1) {
         if (this.state.query.length % 2 === 0) {
@@ -34,18 +35,20 @@ class SearchBar extends Component {
 
 
   render() {
-    console.log(this.state.results)
+
+      console.log(this.state.results)
     return (
+
       <form>
         <input
           placeholder="Search for..."
           ref={input => this.search = input}
           onChange={this.handleInputChange}
         />
-        <Suggestions results={this.state.data} />
+        <Suggestions results={this.state.results} />
       </form>
     )
   }
 }
 
-export default SearchBar  
+export default SearchBar
