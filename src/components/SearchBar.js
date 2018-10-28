@@ -1,22 +1,54 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import axios from 'axios'
+import Suggestions from './Suggestions'
+
+const { API_KEY } = process.env
+const API_URL = 'http://api.musicgraph.com/api/v2/artist/suggest'
 
 class SearchBar extends Component {
+
+  state = {
+    data: [],
+    query: '',
+    results: []
+  }
+
+  getInfo = () => {
+    const data = axios.get(`http://192.168.0.10:8004/api/?name=${this.state.query}`)
+    .then(res => this.setState({ data: res.data }))
+//    data: Array.from(this.state.results)
+  }
+
+  handleInputChange = () => {
+    this.setState({
+      query: this.search.value,
+
+    }, () => {
+      if (this.state.query && this.state.query.length > 1) {
+        if (this.state.query.length % 2 === 0) {
+          this.getInfo()
+        }
+      } else if (!this.state.query) {
+      }
+    })
+  }
+
+
   render() {
+    console.log(this.state.data)
+      console.log(this.state.results)
     return (
 
-      <form className="navbar-search navbar-search-dark form-inline mr-3 d-none d-md-flex ml-lg-auto">
-        <div className="form-group mb-0">
-          <div className="input-group input-group-alternative">
-            <div className="input-group-prepend">
-              <span className="input-group-text"><i className="fas fa-search"></i></span>
-            </div>
-            <input className="form-control" placeholder="Search" type="text" />
-          </div>
-        </div>
+      <form>
+        <input
+          placeholder="Search for..."
+          ref={input => this.search = input}
+          onChange={this.handleInputChange}
+        />
+        <Suggestions results={this.state.data} />
       </form>
-
-    );
+    )
   }
 }
 
-export default SearchBar;
+export default SearchBar

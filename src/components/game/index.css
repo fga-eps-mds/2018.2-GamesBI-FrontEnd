@@ -1,0 +1,71 @@
+.game {
+ font-size :40px;
+ color: white;
+ align-items: center;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
+ margin-left: 60px;
+ font-family: 'Chakra Petch', sans-serif;
+}
+.game2 {
+ font-size :20px;
+ color: white;
+ align-items: center;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: center;
+ margin-left: 60px;
+ font-family: 'Chakra Petch', sans-serif;
+}
+
+
+.game-info{
+    color:black;
+
+}
+.game-info a{
+    color:black!important;
+    font-weight:normal !important;
+}
+.game-info h3{
+    padding: 10px!important;
+}
+.table-info-game{
+    padding: 10px;
+}
+.bg-gradient-custom
+{
+    background: linear-gradient(87deg,#0288D1 0, #0277BD 100%) !important;
+}
+.bg-gradient-info
+{
+    background: linear-gradient(87deg, #0288D1 0, #01579B 100%) !important;
+}
+.GraphicCard{
+    font-family: 'Chakra Petch', sans-serif!important;
+}
+.GraphicCard button{
+    margin-right: 20px !important;
+}
+.SideCard{
+        font-family: 'Chakra Petch', sans-serif!important;
+}
+.imagem{
+    height: 200px;
+    width: 670px;
+    padding: 0px;
+    margin-left: 15px;
+    border-radius: 10px;
+}
+.graficos{
+    height: 350px;
+    width: 620px;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
