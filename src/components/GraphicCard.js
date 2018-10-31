@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 class GraphicCard extends Component {
+  
   render() {
     return (
       <div className="GraphicCard">
@@ -19,7 +20,6 @@ class GraphicCard extends Component {
         <div className="card-body">
 
           <div className="chart">
-            {this.props.children}
           </div>
 
         </div>

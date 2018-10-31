@@ -5,6 +5,7 @@ import TableRank from './TableRank'
 import HeaderCards from './HeaderCards'
 import GraphicCard from './GraphicCard'
 import SideCard from './SideCard'
+import LineGraphic from './LineGraphic'
 
 class MainContent extends Component {
 
@@ -31,14 +32,7 @@ class MainContent extends Component {
       </div>
       <div className="container-fluid mt--7">
         <div className="row">
-          <div className="col-xl-8 mb-5 mb-xl-0">
-            <div className="card bg-gradient-default shadow">
-              <GraphicCard title="Owners"></GraphicCard>
-            </div>
-          </div>
-          <div className="col-xl-4">
-            <SideCard title="Teste"></SideCard>
-          </div>
+          <LineGraphic graphtype="line" y_axis="average_2weeks" x_axys="games" legend="Played Time" title="Average played time in the last 2 weeks"></LineGraphic>
         </div>
         <TableRank />
         <Footer />
