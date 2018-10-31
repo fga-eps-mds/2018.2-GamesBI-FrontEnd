@@ -9,14 +9,13 @@ class SearchBar extends Component {
 
   state = {
     data: [],
-    query: '',
-    results: []
+    query: ''
   }
 
   getInfo = () => {
-    const data = axios.get(`http://192.168.0.10:8004/api/?name=${this.state.query}`)
+    const data = axios.get(`http://localhost:8004/api/?name=${this.state.query}`)
     .then(res => this.setState({ data: res.data }))
-//    data: Array.from(this.state.results)
+
   }
 
   handleInputChange = () => {
@@ -36,7 +35,6 @@ class SearchBar extends Component {
 
   render() {
     console.log(this.state.data)
-      console.log(this.state.results)
     return (
 
       <form>
