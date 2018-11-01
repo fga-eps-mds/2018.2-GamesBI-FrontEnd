@@ -32,9 +32,20 @@ class MainContent extends Component {
       </div>
       <div className="container-fluid mt--7">
         <div className="row">
-          <LineGraphic graphtype="line" y_axis="average_2weeks" x_axys="games" legend="Played Time" title="Average played time in the last 2 weeks"></LineGraphic>
+          <TableRank
+            name="Trending Games"
+            type="trendingnow"
+            >
+          </TableRank>
         </div>
-        <TableRank />
+        <br />
+        <LineGraphic
+          graphtype="line"
+          y_axis="average_2weeks"
+          x_axys="games"
+          legend="Played Time in hours"
+          title="Average played time in the last 2 weeks">
+        </LineGraphic>
         <Footer />
       </div>
     </div>
