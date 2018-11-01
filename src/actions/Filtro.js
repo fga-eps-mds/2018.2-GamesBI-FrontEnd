@@ -16,6 +16,7 @@
          //Adicionar ao objeto criado antes
 
          paramArray[param[0]] = param[1].replace(/%20/g," ");
+          paramArray[param[0]] = paramArray[param[0]].replace(/%27/g,"`");
      }
 
   return{
