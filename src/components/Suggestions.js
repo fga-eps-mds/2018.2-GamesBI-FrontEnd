@@ -16,13 +16,13 @@ render() {
          var item = this.props.results[data];
         laco.push(
             <li key={data} className="listGame">
-                <Button className="btn btn-secondary btn-lg btn-block" type="button" >
-                <a href={`/Game?name=${item["name"]}`}>  {item["name"]}</a></Button>
+                <Button className="btn btn-secondary btn-lg btn-block button-custom" onClick={(event) => {window.location.href=`/Game?name=${item["name"]}`}}>
+                  {item["name"]}</Button>
             </li>)
         console.log(item["name"])
       }
   return(
-      <ul>
+      <ul className = "custom-list">
         {laco}
       </ul>
 

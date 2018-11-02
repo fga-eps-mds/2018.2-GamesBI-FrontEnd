@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Suggestions from './Suggestions'
-
+import './custom.css'
 const { API_KEY } = process.env
 const API_URL = 'http://api.musicgraph.com/api/v2/artist/suggest'
 
@@ -38,7 +38,7 @@ class SearchBar extends Component {
     return (
 
       <form className="navbar-search navbar-search-dark ">
-        <div className="form-group mb-0">
+        <div className="form-group mb-0 custom-from">
             <div className="input-group input-group-alternative">
                 <input className="form-control" placeholder="Search" type="text"
                   ref={input => this.search = input}

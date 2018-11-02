@@ -2,3 +2,9 @@
   .listGame{
       list-style-type: none;
   }
+.custom-from{
+    padding-left: 40px;
+}
+.button-custom {
+    margin-top:3px!important;
+}
