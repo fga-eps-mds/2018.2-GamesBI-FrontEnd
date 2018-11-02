@@ -9,6 +9,22 @@ import LineGraphic from './LineGraphic'
 
 class MainContent extends Component {
 
+  constructor(props){
+      super(props);
+      this.state = {
+        table_type:"",
+        table_name:""
+      }
+  }
+
+  componentWillMount() {
+    this.setState({
+      isLoaded: true,
+      table_type:"trendingnow",
+      table_name:"Trending Games",
+    });
+  }
+
   render() {
     return (
     <div className="main-content">
@@ -22,10 +38,18 @@ class MainContent extends Component {
         <div className="container-fluid">
           <div className="header-body">
             <div className="row">
-              <HeaderCards title="Traffic"></HeaderCards>
-              <HeaderCards title="New Users"></HeaderCards>
-              <HeaderCards title="Sales"></HeaderCards>
-              <HeaderCards title="Performance"></HeaderCards>
+              <div className="col-xl-3 col-lg-6">
+                <HeaderCards title="Trending Games"></HeaderCards>
+              </div>
+              <div className="col-xl-3 col-lg-6">
+                <HeaderCards title="Most Watched"></HeaderCards>
+              </div>
+              <div className="col-xl-3 col-lg-6">
+                <HeaderCards title="Top by played Time"></HeaderCards>
+              </div>
+              <div className="col-xl-3 col-lg-6">
+                <HeaderCards title="Sales"></HeaderCards>
+              </div>
             </div>
           </div>
         </div>
@@ -33,8 +57,8 @@ class MainContent extends Component {
       <div className="container-fluid mt--7">
         <div className="row">
           <TableRank
-            name="Trending Games"
-            type="trendingnow"
+            name={this.state.table_name}
+            type={this.state.table_type}
             >
           </TableRank>
         </div>
