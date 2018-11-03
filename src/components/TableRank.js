@@ -31,7 +31,8 @@ class TableRank extends Component {
       )
   }
 
-  componentDidUpdate(){
+  componentDidUpdate(prevProps, prevState){
+    if(prevProps.type != this.props.type) {
       fetch('http://0.0.0.0:8004/api/get_data/table/'+this.props.type)
         .then(res => res.json())
         .then(
@@ -51,6 +52,7 @@ class TableRank extends Component {
             });
           }
         )
+    }
   }
 
   render() {

@@ -38,16 +38,16 @@ class MainContent extends Component {
         <div className="container-fluid">
           <div className="header-body">
             <div className="row">
-              <div className="col-xl-3 col-lg-6"  onClick={(event) => this.setState({table_type:"trendingnow", table_name:"Trending Now"})}>
+              <div className="col-xl-3 col-lg-6"  onClick={() => this.setState({table_type:"trendingnow", table_name:"Trending Games"})}>
                 <HeaderCards title="Trending Games"></HeaderCards>
               </div>
-              <div className="col-xl-3 col-lg-6" onClick={(event) => this.setState({table_type:"mostwatched", table_name:"Most Watched"})}>
+              <div className="col-xl-3 col-lg-6" onClick={() => this.setState({table_type:"mostwatched", table_name:"Most Watched"})}>
                 <HeaderCards title="Most Watched"></HeaderCards>
               </div>
-              <div className="col-xl-3 col-lg-6" onClick={(event) => this.setState({table_type:"playedtime", table_name:"Top by played Time"})}>
+              <div className="col-xl-3 col-lg-6" onClick={() => this.setState({table_type:"playedtime", table_name:"Top by played Time"})}>
                 <HeaderCards title="Top by played Time"></HeaderCards>
               </div>
-              <div className="col-xl-3 col-lg-6" onClick={(event) => this.setState({table_type:"sales", table_name:"Sales"})}>
+              <div className="col-xl-3 col-lg-6" onClick={() => this.setState({table_type:"sales", table_name:"Sales"})}>
                 <HeaderCards title="Sales"></HeaderCards>
               </div>
             </div>
