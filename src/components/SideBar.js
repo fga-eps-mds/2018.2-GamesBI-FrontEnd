@@ -19,6 +19,11 @@ class SideBar extends Component {
                 </a>
               </li>
               <li className="nav-item">
+                <a className="nav-link" href="/teste">
+                  <i className="ni ni-tv-2 text-primary"></i> teste
+                </a>
+              </li>
+              <li className="nav-item">
                 <a className="nav-link">
                   <i className="ni ni-planet text-blue"></i> Genres
                 </a>
