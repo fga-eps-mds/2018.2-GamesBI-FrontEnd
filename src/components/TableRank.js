@@ -31,6 +31,28 @@ class TableRank extends Component {
       )
   }
 
+  componentDidUpdate(){
+      fetch('http://0.0.0.0:8004/api/get_data/table/'+this.props.type)
+        .then(res => res.json())
+        .then(
+          (result) => {
+            this.setState({
+              isLoaded: true,
+              data:result
+            });
+          },
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+          }
+        )
+  }
+
   render() {
 
     console.log(this.state.data)
