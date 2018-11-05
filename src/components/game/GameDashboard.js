@@ -11,19 +11,24 @@ import Button from "../Button"
 import './index.css'
 import {ImportGame} from '../../actions/ImportGame'
 import axios from 'axios';
+import {Filtro} from '../../actions/Filtro'
 class GameDashboard extends Component {
 constructor(props) {
       super(props);
 
       this.state = {
-        data: ImportGame(),
-        teste: "https://mlsoft.com.br/wp-content/uploads/2018/06/Picture1.png"
+        data: ImportGame(Filtro(window.location.search)),
+        teste: "https://mlsoft.com.br/wp-content/uploads/2018/06/Picture1.png",
+        param: Filtro(window.location.search)
       }
+
     }
+
 
   render() {
 
-       console.log(ImportGame())
+       console.log(this.state.param.paramArray);
+       console.log();
     return (
 
     <div className="main-content">
@@ -62,7 +67,7 @@ constructor(props) {
                     <Button  type="button"onClick={(event) => this.setState({teste:"http://adrenaline.uol.com.br/files/upload/noticias/2012/05/andrei/pc-gaming-market.jpg"})}>Grafico 2</Button>
 
                     <Button  type="button">Grafico 3</Button>
-                    
+
                     <Button  type="button">Grafico 4</Button>
                 </div>
             }>
