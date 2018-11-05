@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class HeaderCard extends Component {
   render() {
     return (
-        <div className="card card-stats mb-4 mb-xl-0">
+        <div className="card card-stats mb-4 mb-xl-0" style={{cursor: 'pointer'}}>
           <div className="card-body">
             <div className="row">
               <div className="col">
