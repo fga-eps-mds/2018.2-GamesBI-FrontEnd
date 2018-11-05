@@ -1,18 +1,86 @@
 import React, { Component } from 'react';
 
 class TableRank extends Component {
+
+  constructor(props){
+      super(props);
+      this.state = {
+        data:[]
+      }
+  }
+
+  componentDidMount() {
+    fetch('http://0.0.0.0:8004/api/get_data/table/'+this.props.type)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            data:result
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if(prevProps.type != this.props.type) {
+      fetch('http://0.0.0.0:8004/api/get_data/table/'+this.props.type)
+        .then(res => res.json())
+        .then(
+          (result) => {
+            this.setState({
+              isLoaded: true,
+              data:result
+            });
+          },
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
+          (error) => {
+            this.setState({
+              isLoaded: true,
+              error
+            });
+          }
+        )
+    }
+  }
+
   render() {
+
+    console.log(this.state.data)
+
+    let rows = this.state.data.map(game => {
+      return(
+          <tr>
+            <th>{game.game}</th>
+            <td>{game.owners}</td>
+            <td>{game.price}</td>
+            <td>{game.positive_reviews_steam}</td>
+            <td>{game.youtube_views}</td>
+            <td>{game.youtube_count_likes}</td>
+            <td>{game.youtube_count_dislikes}</td>
+            <td>{game.twitch_viewer_count}</td>
+          </tr>
+      );
+    })
+
     return (
-      <div className="row mt-5">
-        <div className="col-xl-8 mb-5 mb-xl-0">
+        <div className="col-xl-12">
           <div className="card shadow">
             <div className="card-header border-0">
               <div className="row align-items-center">
                 <div className="col">
-                  <h3 className="mb-0">Page visits</h3>
-                </div>
-                <div className="col text-right">
-                  <a href="#!" className="btn btn-sm btn-primary">See all</a>
+                  <h3 className="mb-0">{this.props.name}</h3>
                 </div>
               </div>
             </div>
@@ -21,89 +89,23 @@ class TableRank extends Component {
               <table className="table align-items-center table-flush">
                 <thead className="thead-light">
                   <tr>
-                    <th scope="col">Page name</th>
-                    <th scope="col">Visitors</th>
-                    <th scope="col">Unique users</th>
-                    <th scope="col">Bounce rate</th>
+                    <th scope="col">Game</th>
+                    <th scope="col">Owners</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Positive reviews on steam</th>
+                    <th scope="col">Youtube Views</th>
+                    <th scope="col">Youtube Likes</th>
+                    <th scope="col">Youtube Dislikes</th>
+                    <th scope="col">Views on Twitch</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">
-                      /argon/
-                    </th>
-                    <td>
-                      4,569
-                    </td>
-                    <td>
-                      340
-                    </td>
-                    <td>
-                      <i className="fas fa-arrow-up text-success mr-3"></i> 46,53%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      /argon/index.html
-                    </th>
-                    <td>
-                      3,985
-                    </td>
-                    <td>
-                      319
-                    </td>
-                    <td>
-                      <i className="fas fa-arrow-down text-warning mr-3"></i> 46,53%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      /argon/charts.html
-                    </th>
-                    <td>
-                      3,513
-                    </td>
-                    <td>
-                      294
-                    </td>
-                    <td>
-                      <i className="fas fa-arrow-down text-warning mr-3"></i> 36,49%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      /argon/tables.html
-                    </th>
-                    <td>
-                      2,050
-                    </td>
-                    <td>
-                      147
-                    </td>
-                    <td>
-                      <i className="fas fa-arrow-up text-success mr-3"></i> 50,87%
-                    </td>
-                  </tr>
-                  <tr>
-                    <th scope="row">
-                      /argon/profile.html
-                    </th>
-                    <td>
-                      1,795
-                    </td>
-                    <td>
-                      190
-                    </td>
-                    <td>
-                      <i className="fas fa-arrow-down text-danger mr-3"></i> 46,53%
-                    </td>
-                  </tr>
+                  {rows}
                 </tbody>
               </table>
             </div>
           </div>
         </div>
-      </div>
     );
   }
 }

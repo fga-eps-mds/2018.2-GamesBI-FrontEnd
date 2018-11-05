@@ -5,8 +5,25 @@ import TableRank from './TableRank'
 import HeaderCards from './HeaderCards'
 import GraphicCard from './GraphicCard'
 import SideCard from './SideCard'
+import LineGraphic from './LineGraphic'
 
 class MainContent extends Component {
+
+  constructor(props){
+      super(props);
+      this.state = {
+        table_type:"",
+        table_name:""
+      }
+  }
+
+  componentWillMount() {
+    this.setState({
+      isLoaded: true,
+      table_type:"trendingnow",
+      table_name:"Trending Games",
+    });
+  }
 
   render() {
     return (
@@ -21,26 +38,38 @@ class MainContent extends Component {
         <div className="container-fluid">
           <div className="header-body">
             <div className="row">
-              <HeaderCards title="Traffic"></HeaderCards>
-              <HeaderCards title="New Users"></HeaderCards>
-              <HeaderCards title="Sales"></HeaderCards>
-              <HeaderCards title="Performance"></HeaderCards>
+              <div className="col-xl-3 col-lg-6"  onClick={() => this.setState({table_type:"trendingnow", table_name:"Trending Games"})}>
+                <HeaderCards title="Trending Games"></HeaderCards>
+              </div>
+              <div className="col-xl-3 col-lg-6" onClick={() => this.setState({table_type:"mostwatched", table_name:"Most Watched"})}>
+                <HeaderCards title="Most Watched"></HeaderCards>
+              </div>
+              <div className="col-xl-3 col-lg-6" onClick={() => this.setState({table_type:"playedtime", table_name:"Top by played Time"})}>
+                <HeaderCards title="Top by played Time"></HeaderCards>
+              </div>
+              <div className="col-xl-3 col-lg-6" onClick={() => this.setState({table_type:"sales", table_name:"Sales"})}>
+                <HeaderCards title="Sales"></HeaderCards>
+              </div>
             </div>
           </div>
         </div>
       </div>
       <div className="container-fluid mt--7">
         <div className="row">
-          <div className="col-xl-8 mb-5 mb-xl-0">
-            <div className="card bg-gradient-default shadow">
-              <GraphicCard title="Owners"></GraphicCard>
-            </div>
-          </div>
-          <div className="col-xl-4">
-            <SideCard title="Teste"></SideCard>
-          </div>
+          <TableRank
+            name={this.state.table_name}
+            type={this.state.table_type}
+            >
+          </TableRank>
         </div>
-        <TableRank />
+        <br />
+        <LineGraphic
+          graphtype="line"
+          y_axis="average_2weeks"
+          x_axys="games"
+          legend="Played Time in hours"
+          title="Average played time in the last 2 weeks">
+        </LineGraphic>
         <Footer />
       </div>
     </div>
