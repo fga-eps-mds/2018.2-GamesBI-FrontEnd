@@ -5,22 +5,16 @@ export function ImportGame(name){
 
 
 // window.location="http://www.devmedia.com.br/";
-        //const response = axios.get(`https://jsonplaceholder.typicode.com/todos/1`).then(res => this.setState({ response: res.data }));
-         const response = {
-            "title": "Watch Dogs 2",
-            "name":"nome do jogo",
-            "languages": `${name.paramArray}`,
-            "genre":"aventura",
-            "count_views":"100",
-            "count_likes":"200",
-            "count_dislikes":"50",
-            "owners":"300",
-            "price":"25 dols"
-        }
+//    const response = axios.get(`http://localhost:8004/api/?name=${name}`);
+
+let results = fetch(`http://localhost:8004/api/?name=${name}`)
+        .then((data) => {
+            return data.data;
+        })
 
   return{
-
+results
     //type: FETCH_CEP_DATA,
-     response
+
   }
 }

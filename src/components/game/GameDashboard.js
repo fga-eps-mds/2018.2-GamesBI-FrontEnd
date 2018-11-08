@@ -17,18 +17,28 @@ constructor(props) {
       super(props);
 
       this.state = {
-        data: ImportGame(Filtro(window.location.search)),
+        data: {},
         teste: "https://mlsoft.com.br/wp-content/uploads/2018/06/Picture1.png",
-        param: Filtro(window.location.search)
+        param: Filtro(window.location.search),
+        data2:{}
       }
 
     }
+    componentWillMount() {
+        axios.get(`http://localhost:8004/api/?name=${this.state.param.paramArray}`)
+   .then(res => this.setState({ data: res.data }))
+    this.setState({ data2: ImportGame(this.state.param.paramArray) })
+}
+
 
 
   render() {
 
+     console.log( this.state.data);
+     console.log( this.state.data2)
+     console.log( this.state.data2.PromiseValue)
        console.log(this.state.param.paramArray);
-       console.log();
+
     return (
 
     <div className="main-content">
@@ -48,7 +58,7 @@ constructor(props) {
           <div className="header-body">
           <div className="row">
           <img src="https://i.imgur.com/RP7y2BE.jpg" className="imagem" alt="test" />
-          <Title  >{this.state.data.response.title}</Title>
+          <Title  >{this.state.param.paramArray}</Title>
           </div>
           </div>
         </div>
@@ -84,23 +94,23 @@ constructor(props) {
             <SideCard  title="Informações">
                 <div className="table-info-game">
                     <GameInfo className="game-info">
-                        <h3>Linguagem: <a>{this.state.data.response.languages}</a></h3>
+                        <h3>Linguagem: <a>{this.state.data.average_forever}</a></h3>
                     </GameInfo>
 
                     <GameInfo className="game-info">
-                        <h3>Genero: <a>{this.state.data.response.genre}</a></h3>
+                        <h3>Genero: <a>{this.state.data.genre}</a></h3>
                     </GameInfo>
                     <GameInfo className="game-info">
-                        <h3>Numero de views: <a>{this.state.data.response.count_views}</a></h3>
+                        <h3>Numero de views: <a>{this.state.data.count_views}</a></h3>
                     </GameInfo>
                     <GameInfo className="game-info">
-                        <h3>Numero de likes: <a>{this.state.data.response.count_likes}</a></h3>
+                        <h3>Numero de likes: <a>{this.state.data.count_likes}</a></h3>
                     </GameInfo>
                     <GameInfo className="game-info">
-                        <h3>Quatidade de donos: <a>{this.state.data.response.owners}</a></h3>
+                        <h3>Quatidade de donos: <a>{this.state.data.owners}</a></h3>
                     </GameInfo>
                     <GameInfo className="game-info">
-                        <h3>Preço: <a>{this.state.data.response.price}</a></h3>
+                        <h3>Preço: <a>{this.state.data.price}</a></h3>
                     </GameInfo>
                 </div>
             </SideCard>
