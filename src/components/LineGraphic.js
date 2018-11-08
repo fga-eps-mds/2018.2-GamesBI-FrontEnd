@@ -11,7 +11,14 @@ class LineGraphic extends Component {
 	}
 
   componentDidMount() {
-    fetch('http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axys+'/')
+    let URL;
+    if (this.props.gamename){
+      URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axys+'/'+this.props.gamename;
+    }
+    else {
+      URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axys+'/';
+    }
+    fetch(URL)
       .then(res => res.json())
       .then(
         (result) => {
