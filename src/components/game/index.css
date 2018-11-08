@@ -69,3 +69,9 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+.item {
+    display: block;
+    width: 250px;
+
+
+}
