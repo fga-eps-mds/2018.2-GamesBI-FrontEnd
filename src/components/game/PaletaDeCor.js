@@ -4,21 +4,44 @@ class PaletaDeCor extends Component {
 
   render() {
       let screns=[]
+       let palet=[]
+       let inicio = 0;
+       let final= 5 ;
         for(let screenshots in this.props.color){
-
+            for (let palette in this.props.color[screenshots].palettes) {
+                palet.push(
+                <div key={palette+"k"} id="galeria">
+                            <ul className="hoverbox">
+                                <li  style =  {{backgroundColor: `${this.props.color[screenshots].palettes[palette].hex}`}} >
+                                    <a href="#">
+                                        <p  >{this.props.color[screenshots].palettes[palette].hex}</p>
+                                    </a>
+                                </li>
+                            </ul>
+                    </div>)
+            }
                  if (screenshots === "0") {
-                     screns.push(<div key={screenshots} className="carousel-item active ">
+
+     screns.push(<div key={screenshots} className="carousel-item active ">
                        <img className="d-block w-100" src={this.props.color[screenshots].url} alt="First slide"/>
+                       {palet.slice(inicio,final)}
                      </div>)
+                     inicio += 5;
+                     final += 5;
                  }else {
                     screns.push( <div key={screenshots} className="carousel-item">
                             <img className="d-block w-100" src={this.props.color[screenshots].url} alt="Third slide"/>
-                          </div>)
+                            {palet.slice(inicio,final)}
+                          </div>
+
+                      )
+                      inicio += 5;
+                      final += 5;
                  }
 
 
              }
-             console.log(screns);
+             console.log(inicio);
 
     return (
 
@@ -28,7 +51,7 @@ class PaletaDeCor extends Component {
           <div id="carouselExampleControls" className="carousel slide" data-ride="carousel">
         <div className="carousel-inner">
 
-{screns}
+        {screns}
         </div>
         <a className="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -40,9 +63,12 @@ class PaletaDeCor extends Component {
         </a>
       </div>
 
+
+
     )
   }
 }
+
 
 
 export default PaletaDeCor;
