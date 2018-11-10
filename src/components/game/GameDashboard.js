@@ -71,7 +71,7 @@ constructor(props) {
         <div className="container-fluid">
           <div className="header-body">
           <div className="row">
-          <img src="https://i.imgur.com/RP7y2BE.jpg" className="imagem" alt="test" />
+          <img src={this.state.data.main_image} className="imagem" alt="test" />
           <Title  >{this.state.param.paramArray}</Title>
           </div>
           </div>
