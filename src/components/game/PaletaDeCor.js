@@ -10,28 +10,36 @@ class PaletaDeCor extends Component {
         for(let screenshots in this.props.color){
             for (let palette in this.props.color[screenshots].palettes) {
                 palet.push(
-                <div key={palette+"k"} id="galeria">
-                            <ul className="hoverbox">
-                                <li  style =  {{backgroundColor: `${this.props.color[screenshots].palettes[palette].hex}`}} >
-                                    <a href="#">
+
+
+                                <li key={palette+"k"} style =  {{backgroundColor: `${this.props.color[screenshots].palettes[palette].hex}`}} >
+                                    <a>
                                         <p  >{this.props.color[screenshots].palettes[palette].hex}</p>
                                     </a>
                                 </li>
-                            </ul>
-                    </div>)
+
+                    )
             }
                  if (screenshots === "0") {
 
      screns.push(<div key={screenshots} className="carousel-item active ">
                        <img className="d-block w-100" src={this.props.color[screenshots].url} alt="First slide"/>
-                       {palet.slice(inicio,final)}
+                       <div className="galeria">
+                           <ul className="hoverbox">
+                                {palet.slice(inicio,final)}
+                           </ul>
+                       </div>
                      </div>)
                      inicio += 5;
                      final += 5;
                  }else {
                     screns.push( <div key={screenshots} className="carousel-item">
                             <img className="d-block w-100" src={this.props.color[screenshots].url} alt="Third slide"/>
-                            {palet.slice(inicio,final)}
+                            <div className="galeria">
+                                <ul className="hoverbox">
+                                     {palet.slice(inicio,final)}
+                                </ul>
+                            </div>
                           </div>
 
                       )

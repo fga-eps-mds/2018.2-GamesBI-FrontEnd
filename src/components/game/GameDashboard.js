@@ -131,7 +131,7 @@ constructor(props) {
                         <h3>Numero de likes: <a>{this.state.data.count_likes}</a></h3>
                     </GameInfo>
                     <GameInfo className="game-info">
-                        <h3>Quatidade de donos: <a>{this.state.data.owners}</a></h3>
+                        <h3>Quantidade de donos: <a>{this.state.data.owners}</a></h3>
                     </GameInfo>
                     <GameInfo className="game-info">
                         <h3>Preço: $<a>{this.state.data.price}</a></h3>
