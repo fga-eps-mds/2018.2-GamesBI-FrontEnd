@@ -134,7 +134,7 @@ constructor(props) {
                         <h3>Quantidade de donos: <a>{this.state.data.owners}</a></h3>
                     </GameInfo>
                     <GameInfo className="game-info">
-                        <h3>Preço: $<a>{this.state.data.price}</a></h3>
+                        <h3>Preço: $<a>{(this.state.data.price)/100}</a></h3>
                     </GameInfo>
                 </div>
             </SideCard>

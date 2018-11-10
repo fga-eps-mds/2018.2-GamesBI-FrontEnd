@@ -4,29 +4,29 @@ class PaletaDeCor extends Component {
 
   render() {
       let screns=[]
-       let palet=[]
+       let palet={}
        let inicio = 0;
        let final= 5 ;
         for(let screenshots in this.props.color){
-            for (let palette in this.props.color[screenshots].palettes) {
-                palet.push(
+            palet[screenshots] = []
 
+            for (let palette in this.props.color[screenshots].palettes) {
+                palet[screenshots].push(
 
                                 <li key={palette+"k"} style =  {{backgroundColor: `${this.props.color[screenshots].palettes[palette].hex}`}} >
                                     <a>
-                                        <p  >{this.props.color[screenshots].palettes[palette].hex}</p>
                                     </a>
                                 </li>
 
                     )
-            }
+            } console.log(palet[screenshots])
                  if (screenshots === "0") {
 
      screns.push(<div key={screenshots} className="carousel-item active ">
                        <img className="d-block w-100" src={this.props.color[screenshots].url} alt="First slide"/>
                        <div className="galeria">
                            <ul className="hoverbox">
-                                {palet.slice(inicio,final)}
+                                {palet[screenshots]}
                            </ul>
                        </div>
                      </div>)
@@ -37,7 +37,7 @@ class PaletaDeCor extends Component {
                             <img className="d-block w-100" src={this.props.color[screenshots].url} alt="Third slide"/>
                             <div className="galeria">
                                 <ul className="hoverbox">
-                                     {palet.slice(inicio,final)}
+                                     {palet[screenshots]}
                                 </ul>
                             </div>
                           </div>
