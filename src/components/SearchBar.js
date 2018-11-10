@@ -13,7 +13,7 @@ class SearchBar extends Component {
   }
 
   getInfo = () => {
-    const data = axios.get(`http://localhost:8004/api/?name=${this.state.query}`)
+    const data = axios.get(`http://localhost:8004/api/?name=${this.state.query}&partial`)
     .then(res => this.setState({ data: res.data }))
 
   }

@@ -12,8 +12,8 @@ class SideCard extends Component {
             </div>
           </div>
         </div>
-        <div className="card-body">
-          <div className="chart">
+        <div className="card-body2">
+          <div className="chart ">
           {this.props.children}
           </div>
         </div>
