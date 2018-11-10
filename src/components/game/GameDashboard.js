@@ -100,7 +100,7 @@ constructor(props) {
             gamename ={this.state.param.paramArray}
               graphtype="line"
               y_axis={this.state.y_axis}
-              x_axys="date"
+              x_axis="date"
               legend={this.state.legend}
               title={this.state.Title}>
             </LineGraphic>
@@ -112,7 +112,6 @@ constructor(props) {
             <br/>
              <PaletaDeCor color={this.state.data.screenshots} />
           </div>
-
           <div className="col-xl-4">
           <div className ="SideCard">
             <SideCard  title="Informações">

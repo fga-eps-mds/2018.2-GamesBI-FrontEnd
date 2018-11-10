@@ -11,12 +11,14 @@ class LineGraphic extends Component {
 	}
 
   componentDidMount() {
+	  console.log(this.props.y_axis);
     let URL;
     if (this.props.gamename){
-      URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axys+'/'+this.props.gamename;
+      URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/'+this.props.gamename;
+	  console.log(URL);
     }
     else {
-      URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axys+'/';
+      URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/';
     }
     fetch(URL)
       .then(res => res.json())
@@ -25,7 +27,7 @@ class LineGraphic extends Component {
           this.setState({
             isLoaded: true,
             data:{
-              labels: result.x_axys,
+              labels: result.x_axis,
               datasets: [
                 {
                   label: this.props.legend,
@@ -46,11 +48,12 @@ class LineGraphic extends Component {
                   pointHoverBorderWidth: 2,
                   pointRadius: 1,
                   pointHitRadius: 10,
-                  data: result.y_axys
+                  data: result.y_axis
                 }
               ]
             }
           });
+		  console.log(result.y_axis);
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -64,13 +67,13 @@ class LineGraphic extends Component {
       )
   }
   componentDidUpdate(prevProps, prevState){
-    
+
 		let URL;
 		if (this.props.gamename){
-		  URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axys+'/'+this.props.gamename;
+		  URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/'+this.props.gamename;
 		}
 		else {
-		  URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axys+'/';
+		  URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/';
 		}
 		fetch(URL)
 		  .then(res => res.json())
@@ -79,7 +82,7 @@ class LineGraphic extends Component {
 			  this.setState({
 				isLoaded: true,
 				data:{
-				  labels: result.x_axys,
+				  labels: result.x_axis,
 				  datasets: [
 					{
 					  label: this.props.legend,
@@ -100,7 +103,7 @@ class LineGraphic extends Component {
 					  pointHoverBorderWidth: 2,
 					  pointRadius: 1,
 					  pointHitRadius: 10,
-					  data: result.y_axys
+					  data: result.y_axis
 					}
 				  ]
 				}
