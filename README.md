@@ -6,11 +6,19 @@
 
 # Getting started
 
-Before anything, you need to install [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/). After installing those, you'll be able to start contributing to this project.
+Before anything, you need to install [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/).
+
+After installing those, you'll be able to start contributing to this project.
 
 # Starting the application
 
 It's as easy as:
+
+```bash
+$ make build
+```
+
+And then...
 
 ```bash
 $ make up
@@ -22,20 +30,6 @@ And you can execute without showing any logs with:
 ```bash
 $ (sudo) docker-compose up -d
 ```
-
-# Other commands
-
-If you want to execute some Flask commands inside your docker container, use:
-```bash
-$ (sudo) docker-compose exec web [command]
-```
-
-These commands can be:
-```bash
-python manage.py test
-python manage.py createapp your-app
-```
-or any other supported by Flask.
 
 # More about the project
 This project aims to offer a competitive BI for games. This includes, game development, content creation for youtube and twitch and whether you should invest in a game if you're a publisher.
