@@ -1,4 +1,4 @@
-FROM node:10.10
+FROM node:8.12
 
 RUN npm install -g serve
 

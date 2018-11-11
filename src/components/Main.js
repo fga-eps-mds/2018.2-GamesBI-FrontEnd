@@ -66,7 +66,7 @@ class MainContent extends Component {
         <LineGraphic
           graphtype="line"
           y_axis="average_2weeks"
-          x_axys="games"
+          x_axis="games"
           legend="Played Time in hours"
           title="Average played time in the last 2 weeks">
         </LineGraphic>
