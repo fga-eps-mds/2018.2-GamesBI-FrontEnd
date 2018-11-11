@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const CROSSDATA_URL = process.env.CROSSDATA_URL
+const CROSSDATA_URL = 'https://gbi-crossdata-staging.herokuapp.com'
 
 class TableRank extends Component {
 

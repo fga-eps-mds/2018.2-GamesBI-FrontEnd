@@ -4,7 +4,7 @@ import Suggestions from './Suggestions'
 import './custom.css'
 const { API_KEY } = process.env
 const API_URL = 'http://api.musicgraph.com/api/v2/artist/suggest'
-const CROSSDATA_URL = process.env.CROSSDATA_URL
+const CROSSDATA_URL = 'https://gbi-crossdata-staging.herokuapp.com'
 
 class SearchBar extends Component {
 
@@ -14,9 +14,8 @@ class SearchBar extends Component {
   }
 
   getInfo = () => {
-    const data = axios.get(`${CROSSDATA_URL}/api/?name=${this.state.query}&partial`)
+    const data = axios.get(CROSSDATA_URL + `/api/?name=${this.state.query}&partial`)
     .then(res => this.setState({ data: res.data }))
-
   }
 
   handleInputChange = () => {

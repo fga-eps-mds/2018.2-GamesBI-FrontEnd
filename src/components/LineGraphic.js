@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Line} from 'react-chartjs-2';
 
-const CROSSDATA_URL = process.env.CROSSDATA_URL
+const CROSSDATA_URL = 'https://gbi-crossdata-staging.herokuapp.com'
 
 class LineGraphic extends Component {
 
@@ -21,6 +21,7 @@ class LineGraphic extends Component {
     }
     else {
       URL = CROSSDATA_URL + '/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/';
+      console.log(URL);
     }
     fetch(URL)
       .then(res => res.json())
@@ -69,7 +70,6 @@ class LineGraphic extends Component {
       )
   }
   componentDidUpdate(prevProps, prevState){
-
 		let URL;
 		if (this.props.gamename){
 		  URL = CROSSDATA_URL +  '/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/'+this.props.gamename;

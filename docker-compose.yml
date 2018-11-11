@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  web:
+  front:
     build: .
     command: npm start
     volumes:
@@ -11,5 +11,4 @@ services:
       - "3000:3000"
     environment:
       - COVERALLS_REPO_TOKEN
-    env_file:
-      - .env
+      - REACT_APP_CROSSDATA_URL=https://gbi-crossdata-staging.herokuapp.com

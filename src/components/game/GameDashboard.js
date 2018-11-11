@@ -15,6 +15,9 @@ import './index.css'
 import {ImportGame} from '../../actions/ImportGame'
 import axios from 'axios';
 import {Filtro} from '../../actions/Filtro'
+
+const CROSSDATA_URL = 'https://gbi-crossdata-staging.herokuapp.com'
+
 class GameDashboard extends Component {
 constructor(props) {
       super(props);
@@ -31,12 +34,9 @@ constructor(props) {
 
     }
     componentWillMount() {
-        axios.get(`http://localhost:8004/api/?name=${this.state.param.paramArray}`)
+        axios.get(CROSSDATA_URL + `/api/?name=${this.state.param.paramArray}`)
    .then(res => this.setState({ data: res.data }))
     this.setState({ data2: ImportGame(this.state.param.paramArray) })
-
-
-
 }
 
 
