@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
+import runtimeEnv from '@mars/heroku-js-runtime-env'
 
-const CROSSDATA_URL = 'https://gbi-crossdata-staging.herokuapp.com'
+const env = runtimeEnv()
+const CROSSDATA_URL = env.REACT_APP_CROSSDATA_URL
 
 class TableRank extends Component {
 

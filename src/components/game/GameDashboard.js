@@ -15,8 +15,10 @@ import './index.css'
 import {ImportGame} from '../../actions/ImportGame'
 import axios from 'axios';
 import {Filtro} from '../../actions/Filtro'
+import runtimeEnv from '@mars/heroku-js-runtime-env'
 
-const CROSSDATA_URL = 'https://gbi-crossdata-staging.herokuapp.com'
+const env = runtimeEnv()
+const CROSSDATA_URL = env.REACT_APP_CROSSDATA_URL
 
 class GameDashboard extends Component {
 constructor(props) {

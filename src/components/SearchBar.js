@@ -2,9 +2,12 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Suggestions from './Suggestions'
 import './custom.css'
+import runtimeEnv from '@mars/heroku-js-runtime-env'
+
+const env = runtimeEnv()
 const { API_KEY } = process.env
 const API_URL = 'http://api.musicgraph.com/api/v2/artist/suggest'
-const CROSSDATA_URL = 'https://gbi-crossdata-staging.herokuapp.com'
+const CROSSDATA_URL = env.REACT_APP_CROSSDATA_URL
 
 class SearchBar extends Component {
 

@@ -11,4 +11,4 @@ services:
       - "3000:3000"
     environment:
       - COVERALLS_REPO_TOKEN
-      - REACT_APP_CROSSDATA_URL=https://gbi-crossdata-staging.herokuapp.com
+      - REACT_APP_CROSSDATA_URL=http://localhost:8004
