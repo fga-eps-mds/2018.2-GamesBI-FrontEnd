@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import {Line} from 'react-chartjs-2';
+import runtimeEnv from '@mars/heroku-js-runtime-env'
+
+const env = runtimeEnv()
+const CROSSDATA_URL = env.REACT_APP_CROSSDATA_URL
 
 class LineGraphic extends Component {
 
@@ -14,11 +18,12 @@ class LineGraphic extends Component {
 	  console.log(this.props.y_axis);
     let URL;
     if (this.props.gamename){
-      URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/'+this.props.gamename;
+      URL = CROSSDATA_URL + '/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/'+this.props.gamename;
 	  console.log(URL);
     }
     else {
-      URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/';
+      URL = CROSSDATA_URL + '/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/';
+      console.log(URL);
     }
     fetch(URL)
       .then(res => res.json())
@@ -67,13 +72,12 @@ class LineGraphic extends Component {
       )
   }
   componentDidUpdate(prevProps, prevState){
-
 		let URL;
 		if (this.props.gamename){
-		  URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/'+this.props.gamename;
+		  URL = CROSSDATA_URL +  '/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/'+this.props.gamename;
 		}
 		else {
-		  URL = 'http://0.0.0.0:8004/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/';
+		  URL = CROSSDATA_URL + '/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/';
 		}
 		fetch(URL)
 		  .then(res => res.json())

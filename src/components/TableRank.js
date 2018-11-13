@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import runtimeEnv from '@mars/heroku-js-runtime-env'
+
+const env = runtimeEnv()
+const CROSSDATA_URL = env.REACT_APP_CROSSDATA_URL
 
 class TableRank extends Component {
 
@@ -10,7 +14,7 @@ class TableRank extends Component {
   }
 
   componentDidMount() {
-    fetch('http://0.0.0.0:8004/api/get_data/table/'+this.props.type)
+    fetch(CROSSDATA_URL + '/api/get_data/table/'+this.props.type)
       .then(res => res.json())
       .then(
         (result) => {
@@ -33,7 +37,7 @@ class TableRank extends Component {
 
   componentDidUpdate(prevProps, prevState){
     if(prevProps.type != this.props.type) {
-      fetch('http://0.0.0.0:8004/api/get_data/table/'+this.props.type)
+      fetch(CROSSDATA_URL + '/api/get_data/table/'+this.props.type)
         .then(res => res.json())
         .then(
           (result) => {

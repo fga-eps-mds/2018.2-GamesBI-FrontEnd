@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import Suggestions from './Suggestions'
 import './custom.css'
+import runtimeEnv from '@mars/heroku-js-runtime-env'
+
+const env = runtimeEnv()
 const { API_KEY } = process.env
 const API_URL = 'http://api.musicgraph.com/api/v2/artist/suggest'
+const CROSSDATA_URL = env.REACT_APP_CROSSDATA_URL
 
 class SearchBar extends Component {
 
@@ -13,9 +17,8 @@ class SearchBar extends Component {
   }
 
   getInfo = () => {
-    const data = axios.get(`http://localhost:8004/api/?name=${this.state.query}&partial`)
+    const data = axios.get(CROSSDATA_URL + `/api/?name=${this.state.query}&partial`)
     .then(res => this.setState({ data: res.data }))
-
   }
 
   handleInputChange = () => {

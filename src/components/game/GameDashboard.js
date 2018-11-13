@@ -15,6 +15,11 @@ import './index.css'
 import {ImportGame} from '../../actions/ImportGame'
 import axios from 'axios';
 import {Filtro} from '../../actions/Filtro'
+import runtimeEnv from '@mars/heroku-js-runtime-env'
+
+const env = runtimeEnv()
+const CROSSDATA_URL = env.REACT_APP_CROSSDATA_URL
+
 class GameDashboard extends Component {
 constructor(props) {
       super(props);
@@ -31,12 +36,9 @@ constructor(props) {
 
     }
     componentWillMount() {
-        axios.get(`http://localhost:8004/api/?name=${this.state.param.paramArray}`)
+        axios.get(CROSSDATA_URL + `/api/?name=${this.state.param.paramArray}`)
    .then(res => this.setState({ data: res.data }))
     this.setState({ data2: ImportGame(this.state.param.paramArray) })
-
-
-
 }
 
 
