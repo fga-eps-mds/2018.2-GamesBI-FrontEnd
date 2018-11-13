@@ -14,8 +14,8 @@ class SideBar extends Component {
 
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/Game">
-                  <i className="ni ni-tv-2 text-primary"></i> Games
+                <a className="nav-link" href="/teste">
+                  <i className="ni ni-tv-2 text-primary"></i> teste
                 </a>
               </li>
               <li className="nav-item">

@@ -1,4 +1,6 @@
-FROM node:10.10
+FROM node:8.12
+
+ENV REACT_APP_CROSSDATA_URL=$REACT_APP_CROSSDATA_URL
 
 RUN npm install -g serve
 

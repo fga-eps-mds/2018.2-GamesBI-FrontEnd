@@ -9,7 +9,7 @@ class GraphicCard extends Component {
             <div className="col">
               <h2 className="text-white mb-0"> {this.props.title} </h2>
             </div>
-            
+
             {this.props.component}
 
           </div>

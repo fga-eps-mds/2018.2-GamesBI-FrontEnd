@@ -5,25 +5,56 @@ import TableRank from '../TableRank'
 import HeaderCards from '../HeaderCards'
 import GraphicCard from '../GraphicCard'
 import SideCard from '../SideCard'
+import LineGraphic from '../LineGraphic'
 import Title from './Title'
 import GameInfo from './GameInfo'
+import PaletaDeCor from './PaletaDeCor'
+
 import Button from "../Button"
 import './index.css'
 import {ImportGame} from '../../actions/ImportGame'
 import axios from 'axios';
+import {Filtro} from '../../actions/Filtro'
+import runtimeEnv from '@mars/heroku-js-runtime-env'
+
+const env = runtimeEnv()
+const CROSSDATA_URL = env.REACT_APP_CROSSDATA_URL
+
 class GameDashboard extends Component {
 constructor(props) {
       super(props);
 
       this.state = {
-        data: ImportGame(),
-        teste: "https://mlsoft.com.br/wp-content/uploads/2018/06/Picture1.png"
+        data: {},
+        img: "https://mlsoft.com.br/wp-content/uploads/2018/06/Picture1.png",
+        param: Filtro(window.location.search),
+        data2:{},
+        y_axis:"average_2weeks",
+        legend:"Played Time ",
+        title:"Average played time in the last 2 weeks"
       }
+
     }
+    componentWillMount() {
+        axios.get(CROSSDATA_URL + `/api/?name=${this.state.param.paramArray}`)
+   .then(res => this.setState({ data: res.data }))
+    this.setState({ data2: ImportGame(this.state.param.paramArray) })
+}
+
+
 
   render() {
+    let lang=[]
+      for(let language in this.state.data.languages){
+           lang.push(this.state.data.languages[language]+", ")
+           }
+    let genr=[]
+       for(let genre in this.state.data.genres){
+            genr.push(this.state.data.genres[genre]+", ")
+            }
 
-       console.log(ImportGame())
+      // console.log(this.state.data.screenshots);
+
     return (
 
     <div className="main-content">
@@ -42,8 +73,8 @@ constructor(props) {
         <div className="container-fluid">
           <div className="header-body">
           <div className="row">
-          <img src="https://i.imgur.com/RP7y2BE.jpg" className="imagem" alt="test" />
-          <Title  >{this.state.data.response.title}</Title>
+          <img src={this.state.data.main_image} className="imagem" alt="test" />
+          <Title  >{this.state.param.paramArray}</Title>
           </div>
           </div>
         </div>
@@ -57,50 +88,60 @@ constructor(props) {
             <GraphicCard title ="Graficos"
             component={
                 <div>
-                    <Button  type="button" onClick={(event) => this.setState({teste:"https://mlsoft.com.br/wp-content/uploads/2018/06/Picture1.png"})}>Grafico 1</Button>
+                <Button  type="button" onClick={(event) => this.setState({y_axis:"viewer_count", legend:"viewer_count "})}>viewer count</Button>
 
-                    <Button  type="button"onClick={(event) => this.setState({teste:"http://adrenaline.uol.com.br/files/upload/noticias/2012/05/andrei/pc-gaming-market.jpg"})}>Grafico 2</Button>
+                <Button  type="button"onClick={(event) => this.setState({y_axis:"positive_reviews_steam", legend:"positive reviews steam "})}>positive reviews steam</Button>
 
-                    <Button  type="button">Grafico 3</Button>
-                    
-                    <Button  type="button">Grafico 4</Button>
+                <Button  type="button" onClick={(event) => this.setState({y_axis:"price", legend:"price "})}>price</Button>
+
+                <Button  type="button" onClick={(event) => this.setState({y_axis:"owners", legend:"owners "})}>owners</Button>
+
                 </div>
             }>
-            <img  src={this.state.teste} className="graficos" alt="test" />
+            <LineGraphic
+            gamename ={this.state.param.paramArray}
+              graphtype="line"
+              y_axis={this.state.y_axis}
+              x_axis="date"
+              legend={this.state.legend}
+              title={this.state.Title}>
+            </LineGraphic>
 
             </GraphicCard>
 
 
-
             </div>
+            <br/>
+             <PaletaDeCor color={this.state.data.screenshots} />
           </div>
           <div className="col-xl-4">
           <div className ="SideCard">
             <SideCard  title="Informações">
                 <div className="table-info-game">
                     <GameInfo className="game-info">
-                        <h3>Linguagem: <a>{this.state.data.response.languages}</a></h3>
+                        <h3>Linguagens: <a className="item">{lang}</a></h3>
                     </GameInfo>
 
                     <GameInfo className="game-info">
-                        <h3>Genero: <a>{this.state.data.response.genre}</a></h3>
+                        <h3>Generos: <a>{genr}</a></h3>
                     </GameInfo>
                     <GameInfo className="game-info">
-                        <h3>Numero de views: <a>{this.state.data.response.count_views}</a></h3>
+                        <h3>Numero de views: <a>{this.state.data.count_views}</a></h3>
                     </GameInfo>
                     <GameInfo className="game-info">
-                        <h3>Numero de likes: <a>{this.state.data.response.count_likes}</a></h3>
+                        <h3>Numero de likes: <a>{this.state.data.count_likes}</a></h3>
                     </GameInfo>
                     <GameInfo className="game-info">
-                        <h3>Quatidade de donos: <a>{this.state.data.response.owners}</a></h3>
+                        <h3>Quantidade de donos: <a>{this.state.data.owners}</a></h3>
                     </GameInfo>
                     <GameInfo className="game-info">
-                        <h3>Preço: <a>{this.state.data.response.price}</a></h3>
+                        <h3>Preço: $<a>{(this.state.data.price)/100}</a></h3>
                     </GameInfo>
                 </div>
             </SideCard>
           </div>
           </div>
+
         </div>
         <Footer />
       </div>

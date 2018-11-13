@@ -1,22 +1,24 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Suggestions from './Suggestions'
+import './custom.css'
+import runtimeEnv from '@mars/heroku-js-runtime-env'
 
+const env = runtimeEnv()
 const { API_KEY } = process.env
 const API_URL = 'http://api.musicgraph.com/api/v2/artist/suggest'
+const CROSSDATA_URL = env.REACT_APP_CROSSDATA_URL
 
 class SearchBar extends Component {
 
   state = {
     data: [],
-    query: '',
-    results: []
+    query: ''
   }
 
   getInfo = () => {
-    const data = axios.get(`http://192.168.0.10:8004/api/?name=${this.state.query}`)
+    const data = axios.get(CROSSDATA_URL + `/api/?name=${this.state.query}&partial`)
     .then(res => this.setState({ data: res.data }))
-//    data: Array.from(this.state.results)
   }
 
   handleInputChange = () => {
@@ -36,17 +38,20 @@ class SearchBar extends Component {
 
   render() {
     console.log(this.state.data)
-      console.log(this.state.results)
     return (
 
-      <form>
-        <input
-          placeholder="Search for..."
-          ref={input => this.search = input}
-          onChange={this.handleInputChange}
-        />
+      <form className="navbar-search navbar-search-dark ">
+        <div className="form-group mb-0 custom-from">
+            <div className="input-group input-group-alternative">
+                <input className="form-control" placeholder="Search" type="text"
+                  ref={input => this.search = input}
+                  onChange={this.handleInputChange}
+                />
+            </div>
+        </div>
         <Suggestions results={this.state.data} />
       </form>
+
     )
   }
 }
