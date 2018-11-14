@@ -72,6 +72,7 @@ class LineGraphic extends Component {
       )
   }
   componentDidUpdate(prevProps, prevState){
+    if(prevProps.type != this.props.type) {
 		let URL;
 		if (this.props.gamename){
 		  URL = CROSSDATA_URL +  '/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/'+this.props.gamename;
@@ -123,7 +124,7 @@ class LineGraphic extends Component {
 			  });
 			}
 		  )
-
+    }
   }
 
   render() {
