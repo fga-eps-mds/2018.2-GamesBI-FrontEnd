@@ -69,7 +69,7 @@ class TableRank extends Component {
           <tr>
             <th>{game.game}</th>
             <td>{game.owners}</td>
-            <td> $ {game.price/100}</td>
+            <td>{((game.price)/100)!=0 ? (game.price)/100 :"Free"}</td>
             <td>{game.positive_reviews_steam}</td>
             <td>{game.youtube_views}</td>
             <td>{game.youtube_count_likes}</td>
