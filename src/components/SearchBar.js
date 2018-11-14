@@ -37,7 +37,6 @@ class SearchBar extends Component {
 
 
   render() {
-    console.log(this.state.data)
     return (
 
       <form className="navbar-search navbar-search-dark ">

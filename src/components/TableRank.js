@@ -61,8 +61,6 @@ class TableRank extends Component {
 
   render() {
 
-    console.log(this.state.data)
-
     let rows = this.state.data.map(game => {
       return(
 
