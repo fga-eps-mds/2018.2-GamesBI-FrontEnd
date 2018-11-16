@@ -12,3 +12,16 @@ services:
     environment:
       - COVERALLS_REPO_TOKEN
       - REACT_APP_CROSSDATA_URL=http://localhost:8004
+  cucumber:
+    build: 
+      context: cucumber
+      dockerfile: Dockerfile
+    command : cucumber --order random
+    working_dir: /app
+    volumes:
+      - ./cucumber/tmp:/app/tmp
+      - ./cucumber/features:/app/features
+    environment:
+      ROOT_URL: http://front:3000
+    privileged: true
+
