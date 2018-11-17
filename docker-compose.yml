@@ -1,4 +1,4 @@
-version: '3'
+version: '3.5'
 
 services:
   front:
@@ -12,6 +12,8 @@ services:
     environment:
       - COVERALLS_REPO_TOKEN
       - REACT_APP_CROSSDATA_URL=http://localhost:8004
+    networks:
+      - proxynet
   cucumber:
     build: 
       context: cucumber
@@ -23,5 +25,9 @@ services:
       - ./cucumber/features:/app/features
     environment:
       ROOT_URL: http://front:3000
-    privileged: true
+    networks:
+      - proxynet
 
+networks:
+  proxynet:
+    name: GamesBI-network

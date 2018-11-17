@@ -1,5 +1,4 @@
-Feature: Check out the team
-  As a user, I want to be able to view the team, so I can see who they are
+Feature: As a user, i should be able to click on all the buttons on the homepage and also see all the graphics on it
 
   Scenario: User can see home page
     Given I visit the home page
