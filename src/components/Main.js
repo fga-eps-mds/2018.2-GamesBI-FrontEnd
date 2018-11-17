@@ -44,7 +44,7 @@ class MainContent extends Component {
               <div className="col-xl-3 col-lg-6" onClick={() => this.setState({table_type:"mostwatched", table_name:"Most Watched"})}>
                 <HeaderCards title="Most Watched"></HeaderCards>
               </div>
-              <div className="col-xl-3 col-lg-6" onClick={() => this.setState({table_type:"playedtime", table_name:"Top by played Time"})}>
+              <div className="col-xl-3 col-lg-6" onClick={() => this.setState({table_type:"playedtime", table_name:"Top By Played Time"})}>
                 <HeaderCards title="Top by played Time"></HeaderCards>
               </div>
               <div className="col-xl-3 col-lg-6" onClick={() => this.setState({table_type:"sales", table_name:"Sales"})}>
