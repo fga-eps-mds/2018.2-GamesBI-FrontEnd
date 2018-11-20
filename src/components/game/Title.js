@@ -4,7 +4,7 @@ class Title extends Component {
 
   render() {
     return (
-      <h1 className={this.props.children.length <= 12 ?"game" : "game2"}>
+      <h1 className="game2">
       {this.props.children}</h1>
     )
   }
