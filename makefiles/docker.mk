@@ -3,7 +3,7 @@ file := "docker-compose.yml"
 
 up:
 	# Create and start containers
-	sudo docker-compose up
+	sudo docker-compose up front
 
 build:
 	# Rebuild the docker compose
