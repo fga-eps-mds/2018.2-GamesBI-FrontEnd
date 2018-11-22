@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import Footer from '../Footer'
-import SearchBar from '../SearchBar'
+
 import TableRank from '../TableRank'
 import HeaderCards from '../HeaderCards'
 import GraphicCard from '../GraphicCard'
-import DataGame from '../DataGame'
+import DataGame from './DataGame'
 import LineGraphic from '../LineGraphic'
 import TopBar from './TopBar'
 import GameInfo from './GameInfo'
@@ -68,7 +68,7 @@ constructor(props) {
              <PaletaDeCor color={this.state.data.screenshots} />
           </div>
           <div className="col-xl-4">
-          <DataGame countViews={this.state.data.count_views} countLikes={this.state.data.count_likes} owners={this.state.data.owners} price={(this.state.data.price)/100}/>
+          <DataGame  lang={lang} genr={genr} countViews={this.state.data.count_views} countLikes={this.state.data.count_likes} owners={this.state.data.owners} price={(this.state.data.price)/100}/>
           </div>
         </div>
         <Footer />

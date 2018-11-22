@@ -5,16 +5,16 @@ class DataGame extends Component {
 
   render() {
     return (
-        
+
         <div className ="SideCard">
           <SideCard  title="Informações">
               <div className="table-info-game">
                   <GameInfo className="game-info">
-                      <h3>Linguagens: <a className="item">{lang}</a></h3>
+                      <h3>Linguagens: <a className="item">{this.props.lang}</a></h3>
                   </GameInfo>
 
                   <GameInfo className="game-info">
-                      <h3>Generos: <a>{genr}</a></h3>
+                      <h3>Generos: <a>{this.props.genr}</a></h3>
                   </GameInfo>
                   <GameInfo className="game-info">
                       <h3>Numero de views: <a>{this.props.countViews}</a></h3>
@@ -31,10 +31,10 @@ class DataGame extends Component {
               </div>
           </SideCard>
         </div>
-        </div>
+
     )
   }
 }
 
 
-export default TopBar;
+export default DataGame;
