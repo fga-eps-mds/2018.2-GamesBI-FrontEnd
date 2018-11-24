@@ -56,9 +56,9 @@ constructor(props) {
             <GraphicCard title ="Graficos"
             component={
                 <div>
-                <Button  type="button" onClick={(event) => this.setState({y_axis:"viewer_count", legend:"viewer_count "})}>viewer count</Button>
-                <Button  type="button"onClick={(event) => this.setState({y_axis:"positive_reviews_steam", legend:"positive reviews steam "})}>positive reviews steam</Button>
-                <Button  type="button" onClick={(event) => this.setState({y_axis:"price", legend:"price "})}>price</Button>
+                <Button  type="button" onClick={(event) => this.setState({y_axis:"viewer_count", legend:"viewer_count"})}>viewer count</Button>
+                <Button  type="button"onClick={(event) => this.setState({y_axis:"positive_reviews_steam", legend:"positive reviews steam"})}>positive reviews steam</Button>
+                <Button  type="button" onClick={(event) => this.setState({y_axis:"price", legend:"price"})}>price</Button>
                 <Button  type="button" onClick={(event) => this.setState({y_axis:"owners", legend:"owners "})}>owners</Button>
                 </div>}>
             <LineGraphic gamename ={this.state.param.paramArray} graphtype="line" y_axis={this.state.y_axis} x_axis="date" legend={this.state.legend} title={this.state.Title}></LineGraphic>

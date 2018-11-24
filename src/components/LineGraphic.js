@@ -69,7 +69,7 @@ class LineGraphic extends Component {
       )
   }
   componentDidUpdate(prevProps, prevState){
-    if(prevProps.type != this.props.type) {
+    if(prevProps.legend != "Played Time") {
 		let URL;
 		if (this.props.gamename){
 		  URL = CROSSDATA_URL +  '/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/'+this.props.gamename;
