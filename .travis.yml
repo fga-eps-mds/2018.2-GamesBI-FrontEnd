@@ -20,7 +20,7 @@ deploy:
     skip_cleanup: true
     api_key:
       secure: ${HEROKU_KEY}
-    app: gbi-frontend-staging
+    app: gbi-frontend2-staging
     on:
       repo: fga-eps-mds/2018.2-GamesBI-FrontEnd
       branch: develop
@@ -28,7 +28,7 @@ deploy:
     skip_cleanup: true
     api_key:
       secure: ${HEROKU_KEY}
-    app: gbi-frontend-production
+    app: gbi-frontend2-production
     on:
       repo: fga-eps-mds/2018.2-GamesBI-FrontEnd
       branch: master
