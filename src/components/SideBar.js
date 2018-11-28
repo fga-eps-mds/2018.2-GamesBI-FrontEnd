@@ -14,15 +14,11 @@ class SideBar extends Component {
 
             <ul className="navbar-nav">
               <li className="nav-item">
-                <a className="nav-link" href="/teste">
-                  <i className="ni ni-tv-2 text-primary"></i> teste
+                <a className="nav-link" href="/">
+                  <i className="ni ni-tv-2 text-primary"></i> Home
                 </a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link">
-                  <i className="ni ni-planet text-blue"></i> Genres
-                </a>
-              </li>
+
             </ul>
 
             <hr className="my-3" />
@@ -32,7 +28,7 @@ class SideBar extends Component {
             <ul className="navbar-nav mb-md-3">
               <li className="nav-item">
                 <a className="nav-link" href="https://fga-eps-mds.github.io/2018.2-GamesBI/">
-                  <i className="ni ni-spaceship"></i> Getting started
+                  <i className="ni ni-spaceship"></i> Software Documentation
                 </a>
               </li>
             </ul>

@@ -15,7 +15,6 @@ class LineGraphic extends Component {
 	}
 
   componentDidMount() {
-	  console.log(this.props.y_axis);
     let URL;
     if (this.props.gamename){
       URL = CROSSDATA_URL + '/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/'+this.props.gamename;
@@ -23,7 +22,6 @@ class LineGraphic extends Component {
     }
     else {
       URL = CROSSDATA_URL + '/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/';
-      console.log(URL);
     }
     fetch(URL)
       .then(res => res.json())
@@ -58,7 +56,6 @@ class LineGraphic extends Component {
               ]
             }
           });
-		  console.log(result.y_axis);
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
@@ -72,7 +69,7 @@ class LineGraphic extends Component {
       )
   }
   componentDidUpdate(prevProps, prevState){
-    if(prevProps.type != this.props.type) {
+    if(prevProps.legend != "Played Time") {
 		let URL;
 		if (this.props.gamename){
 		  URL = CROSSDATA_URL +  '/api/get_data/line/'+this.props.y_axis+'/'+this.props.x_axis+'/'+this.props.gamename;

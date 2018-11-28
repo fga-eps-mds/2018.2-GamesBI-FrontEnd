@@ -37,13 +37,12 @@ class SearchBar extends Component {
 
 
   render() {
-    console.log(this.state.data)
     return (
 
       <form className="navbar-search navbar-search-dark ">
         <div className="form-group mb-0 custom-from">
             <div className="input-group input-group-alternative">
-                <input className="form-control" placeholder="Search" type="text"
+                <input className="form-control" placeholder="Search Game" type="text"
                   ref={input => this.search = input}
                   onChange={this.handleInputChange}
                 />

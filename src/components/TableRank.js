@@ -61,14 +61,13 @@ class TableRank extends Component {
 
   render() {
 
-    console.log(this.state.data)
-
     let rows = this.state.data.map(game => {
       return(
+
           <tr>
             <th>{game.game}</th>
             <td>{game.owners}</td>
-            <td>{game.price}</td>
+            <td>{((game.price)/100)!=0 ? (game.price)/100 :"Free"}</td>
             <td>{game.positive_reviews_steam}</td>
             <td>{game.youtube_views}</td>
             <td>{game.youtube_count_likes}</td>
